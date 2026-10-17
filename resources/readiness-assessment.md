@@ -1,6 +1,6 @@
 # PRI performance and release-risk readiness assessment
 
-Public discussion brief · v0.3.0 · October 17, 2026
+Public discussion brief · v0.4.0 · October 17, 2026
 
 ## Purpose
 
@@ -68,3 +68,5 @@ Any pilot, integration, training, or recurring review would need its own scope a
 An interested organization or technical reviewer can identify the journey, operational question, available evidence categories, access constraints, and expected decision. Record the materials' version and actual review date. Keep preliminary interest, a scoped engagement, implementation, and verified results distinct.
 
 Use the [journey and baseline worksheet](journey-baseline.md), [risk register](risk-register.md), and [release-readiness checklist](release-readiness.md) as discussion aids. See the [public roadmap](public-roadmap.md) for development stages and the [evidence and value note](evidence-and-value.md) for evaluation limitations.
+
+See the [synthetic worked example](worked-example.md) and [review and adaptation guide](review-guide.md) for connected records and discussion questions.

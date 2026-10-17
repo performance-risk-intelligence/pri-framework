@@ -1,5 +1,13 @@
 # PRI public hub changelog
 
+## v0.4.0 — October 17, 2026
+
+- Added component status and a dated publication record, separating public artifacts from operational implementation and validation.
+- Explained the proposed handoffs across measurements, changes, risks, accountable decisions, prevention, and recurrence review.
+- Added two conditional pathways beyond a direct engagement: downstream service effects and methods maintained by other teams.
+- Added a complete synthetic worked example and a review/adaptation guide, each as a reading page and Markdown download.
+- Preserved the four-stage relative roadmap, existing identity/contact information, licensing position, and company references. No external endorsement, engagement, deployment, or achieved outcome is asserted.
+
 ## v0.3.0 — October 17, 2026
 
 - Added a public roadmap preserving the four relative implementation stages and their planned outputs.

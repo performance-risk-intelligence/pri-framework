@@ -1,12 +1,18 @@
 # PRI public development and adoption roadmap
 
-Public planning brief · v0.3.0 · October 17, 2026
+Public planning brief · v0.4.0 · October 17, 2026
 
 ## Purpose and scope
 
 Performance Risk Intelligence (PRI) is being developed to help U.S. organizations operating mobile, voice-enabled, cloud-backed, and AI-enabled services measure performance consistently, assess release risk, and translate incident learning into preventive controls. Compute and cost indicators, with qualified modeled energy proxies, are part of the same framework.
 
 The four connected pillars are predictive regression prevention, standardized measurement, performance risk governance, and compute/cost efficiency with modeled energy indicators. Components are intended for incremental adoption within an organization's existing tools and decision authority.
+
+## Public publication baseline
+
+On October 17, 2026, v0.2.0 published the initial hub, worksheets, evidence/value note, and synthetic interaction. Version 0.3.0 added the roadmap and assessment brief. Version 0.4.0 added component-status reporting, a synthetic worked example, and review/adaptation guidance. These are publication milestones, not operational deployments or completed implementation phases.
+
+The public edition supplies no executable benchmark implementation, validated predictive model or dataset, deployment evidence, delivered-training evidence, or verified customer outcomes. Published descriptions and templates must be distinguished from operational implementation and validation.
 
 ## How to read the timeline
 
@@ -69,3 +75,5 @@ This edition provides the framework overview, starter worksheets, a synthetic ru
 An interested organization can review the assessment brief, select one journey, identify a workflow owner, and discuss available authorized evidence. That discussion informs fit and scope; it does not establish a commercial engagement.
 
 Read the [readiness assessment brief](readiness-assessment.md), [framework overview](pri-overview.md), and [evidence and value measurement note](evidence-and-value.md).
+
+See the [synthetic worked example](worked-example.md) and [review and adaptation guide](review-guide.md) for connected records and discussion questions.

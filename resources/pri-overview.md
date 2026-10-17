@@ -1,6 +1,6 @@
 # Performance Risk Intelligence
 
-Public overview · v0.3.0 · October 17, 2026
+Public overview · v0.4.0 · October 17, 2026
 
 ## Purpose
 
@@ -55,3 +55,5 @@ Planned work includes assessment specifications, validation procedures, predicti
 ## Using this overview
 
 When discussing PRI, identify the version and actual review date. Keep proposals, expressions of interest, scoped engagements, and validated outcomes distinct. Use only authorized data and accurately characterize uncertainty.
+
+See the [synthetic worked example](worked-example.md) and [review and adaptation guide](review-guide.md) for connected records and discussion questions.
