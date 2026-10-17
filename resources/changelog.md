@@ -1,5 +1,11 @@
 # PRI public hub changelog
 
+## v0.4.1 — October 17, 2026
+
+- Added Faruk Uslu's founder profile and user-supplied photograph.
+- Added a short background connecting software performance/release governance, operational risk experience, and graduate education to PRI's purpose.
+- Historical experience remains separate from PRI development and outcome claims. No employer or university endorsement is asserted.
+
 ## v0.4.0 — October 17, 2026
 
 - Added component status and a dated publication record, separating public artifacts from operational implementation and validation.

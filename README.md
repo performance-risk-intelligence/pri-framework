@@ -1,6 +1,6 @@
 # PRI public framework hub
 
-A dependency-free, static HTML/CSS/JavaScript website for Performance Risk Intelligence. Public edition v0.4.0, prepared October 17, 2026. Repository publication and website deployment are separate steps; verify the Pages workflow before sharing a public website URL.
+A dependency-free, static HTML/CSS/JavaScript website for Performance Risk Intelligence. Public edition v0.4.1, prepared October 17, 2026. Repository publication and website deployment are separate steps; verify the Pages workflow before sharing a public website URL.
 
 ## Contents
 
