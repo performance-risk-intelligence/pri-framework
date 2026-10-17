@@ -1,5 +1,14 @@
 # PRI public hub changelog
 
+## v0.3.0 — October 17, 2026
+
+- Added a public roadmap preserving the four relative implementation stages and their planned outputs.
+- Added a readiness assessment brief describing one-journey scoping, authorized inputs, proposed deliverables, evaluation, and implementation boundaries.
+- Added readable web pages and downloadable Markdown versions, linked from the assessment and resources sections.
+- Clarified that commercial dissemination follows framework development in Months 12–24 and that relative stages do not assert completed progress.
+
+These resources were newly prepared for this edition. They do not establish customer engagements, operational validation, or achieved outcomes. Financial plans, customer correspondence, and private records are not included.
+
 ## v0.2.0 — October 17, 2026
 
 Expanded edition prepared for the first repository release. Publication and deployment must be verified separately.

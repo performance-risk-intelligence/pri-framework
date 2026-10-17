@@ -1,10 +1,11 @@
 # PRI public framework hub
 
-A dependency-free, static HTML/CSS/JavaScript website for Performance Risk Intelligence. Public edition v0.2.0, prepared October 17, 2026. Repository publication and website deployment are separate steps; verify the Pages workflow before sharing a public website URL.
+A dependency-free, static HTML/CSS/JavaScript website for Performance Risk Intelligence. Public edition v0.3.0, prepared October 17, 2026. Repository publication and website deployment are separate steps; verify the Pages workflow before sharing a public website URL.
 
 ## Contents
 
 - `index.html`: customer pain points and intended value, framework details, illustrative applications, proposed assessment and adoption phases, potential broader benefits, resources, and status.
+- `roadmap.html` and `assessment.html`: readable public planning briefs with downloadable Markdown versions.
 - `assets/`: local styles, client-side interactions, and SVG favicon. No external fonts, tracking, forms, APIs, or analytics.
 - `resources/`: public Markdown overview, three starter templates, evidence/value measurement note, and changelog.
 - `.github/workflows/pages.yml`: GitHub Pages deployment workflow staging only the public site files.
@@ -25,7 +26,7 @@ Open the printed local address. Relative asset paths support a GitHub project-si
 
 Target repository: https://github.com/performance-risk-intelligence/pri-framework
 
-Expected project-site URL after successful GitHub Pages configuration and deployment: https://performance-risk-intelligence.github.io/pri-framework/ (not yet verified as deployed).
+Expected project-site URL after successful GitHub Pages configuration and deployment: https://performance-risk-intelligence.github.io/pri-framework/ (deployment verified October 17, 2026).
 
 1. Review all public content, development-status descriptions, and downloads.
 2. Use the dedicated target repository above, containing only this directory's public contents. Do not initialize or publish the surrounding document workspace. Preserve existing repository history and check for upstream changes before syncing.

@@ -1,6 +1,6 @@
 # Performance Risk Intelligence
 
-Public overview · v0.2.0 · October 17, 2026
+Public overview · v0.3.0 · October 17, 2026
 
 ## Purpose
 
@@ -34,9 +34,13 @@ Start with one workflow, such as a defined real-time interaction, document-proce
 
 An assessment would agree on boundaries and authorized inputs, establish a baseline where data permits, review available incident and change records, and propose practical controls. Potential outputs include a baseline report, incident-linked risk register, release-risk criteria, a prioritized test plan, and a readiness checklist. Implementation, access, timelines, and commercial terms require separate agreement. Commercial assessments and pilots are planned for the commercial dissemination stage following framework development.
 
+Read the [readiness assessment brief](readiness-assessment.md) for proposed inputs, responsibilities, deliverables, and evaluation criteria.
+
 ## Adoption sequence
 
 The proposed implementation plan sequences foundation work in Months 1–3, prediction and governance in Months 3–6, scale and efficiency in Months 6–12, and commercial dissemination in Months 12–24. These are relative planning periods, not elapsed progress or promised delivery dates. A bounded commercial assessment and any subsequent pilot require readiness, scope, authorized inputs, and separate agreement.
+
+The [public roadmap](public-roadmap.md) describes planned outputs and readiness reviews for each stage.
 
 ## Potential broader value
 
@@ -44,7 +48,7 @@ If demonstrated in adopting organizations, improvements could support more depen
 
 ## Development status
 
-Available in this edition: framework description, starter Markdown worksheets, and a synthetic rules-based website illustration. These newly authored resources are starting points, not validated operational controls.
+Available in this edition: framework description, starter Markdown worksheets, a public roadmap, a readiness assessment brief, and a synthetic rules-based website illustration. These newly authored resources are starting points, not validated operational controls.
 
 Planned work includes assessment specifications, validation procedures, predictive-method evaluation, integration patterns, training materials, and qualified energy-impact methods. No customer deployments, measured customer results, model accuracy, or guaranteed improvements are asserted here.
 
