@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore PRI performance measurement, incident learning, release-risk assessment, preventive controls, and outcomes using synthetic data only.">
+  <title>PRI Sandbox | Interactive synthetic demonstration</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/pri-sandbox.css">
+  <script src="assets/pri-sandbox.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">P<span>.</span></span><span><strong>PRI</strong><small>Performance Risk Intelligence</small></span></a>
+  <nav aria-label="Site"><a href="index.html">Home</a><a href="worked-example.html">Worked example</a><a href="assessment.html">Assessment</a><a href="resources/pri-sandbox-guide.md" download>Method guide</a></nav>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">INTERACTIVE METHOD DEMONSTRATION / SYNTHETIC DATA</p>
+      <h1>Follow a release from <em>signal</em> to prevention.</h1>
+      <p>Explore how PRI could connect a performance benchmark, software incident history, a transparent risk assessment, preventive release controls, and review outcomes. Every value and record in this sandbox is synthetic.</p>
+      <div class="hero-actions"><a class="button primary" href="#workbench">Start exploring <span aria-hidden="true">↘</span></a><button class="button plain" id="reset-demo" type="button">Reset all examples</button></div>
+    </div>
+    <aside class="hero-side" aria-label="Demonstration boundaries">
+      <p class="eyebrow">WHAT THIS IS</p>
+      <h2>A working teaching tool, not a live release system.</h2>
+      <ul><li>Deterministic, explainable example rules</li><li>Editable synthetic observations and incident records</li><li>Human review and exception documentation</li><li>No backend, customer data, trained model, or production deployment</li></ul>
+      <p class="small">No form inputs are sent to PRI. This browser session is temporary. Export is initiated only if you choose it.</p>
+    </aside>
+  </section>
+  <div class="process-line" aria-label="Five linked capabilities">
+    <span>01 · Benchmark</span><span>02 · Incidents</span><span>03 · Assess</span><span>04 · Prevent</span><span>05 · Measure</span>
+  </div>
+  <div class="main-layout" id="workbench">
+    <div class="main-column">
+      <section class="module" aria-labelledby="benchmark-title">
+        <div class="section-top"><span class="step">01 / PERFORMANCE BENCHMARKING</span><span class="chip">Synthetic</span></div>
+        <h2 id="benchmark-title">Are the candidate results comparable?</h2>
+        <p>Select a representative workflow and synthetic release scenario. Edit the measured values to see how the assessment changes. The examples assume comparable workloads; a real assessment would verify that assumption.</p>
+        <div class="form-grid">
+          <label>Critical user journey<select id="workflow"><option value="coaching">Real-time AI coaching prompt</option><option value="document">Document-to-analysis job</option><option value="voice">Scheduled voice first exchange</option></select></label>
+          <label>Release scenario<select id="scenario"><option value="steady">Comparable release</option><option value="regression">Performance regression</option><option value="missing">Incomplete evidence</option></select></label>
+        </div>
+        <div class="mini-grid" id="baseline-cards">
+          <div class="mini-card"><small id="metric-label">p95 journey time</small><strong id="base-p95">900 ms</strong><span>Baseline</span></div>
+          <div class="mini-card"><small>Success rate</small><strong id="base-success">99.5%</strong><span>Baseline</span></div>
+          <div class="mini-card"><small>Retry rate</small><strong id="base-retry">0.8%</strong><span>Baseline</span></div>
+          <div class="mini-card"><small>Unit cost</small><strong id="base-cost">$0.050</strong><span>Baseline, synthetic</span></div>
+        </div>
+        <h3>Candidate observations</h3>
+        <div class="form-grid four">
+          <label id="candidate-p95-label">p95 time (ms)<input id="p95" type="number" min="0.01" step="0.01"></label>
+          <label>Successful (%)<input id="success" type="number" min="0" max="100" step="0.1"></label>
+          <label>Retries (%)<input id="retry" type="number" min="0" max="100" step="0.1"></label>
+          <label>Unit cost ($)<input id="cost" type="number" min="0" step="0.001"></label>
+        </div>
+        <div class="comparison">
+          <h3>p95 journey time comparison</h3>
+          <div class="bar-row"><span>Baseline</span><div class="track"><div id="base-bar" class="bar baseline"></div></div><strong id="base-bar-text">900 ms</strong></div>
+          <div class="bar-row"><span>Candidate</span><div class="track"><div id="candidate-bar" class="bar candidate"></div></div><strong id="candidate-bar-text">-</strong></div>
+        </div>
+        <p class="note">Blank values mean missing evidence, not zero failure. Success, failures, and retries are recorded separately from latency, which should be measured only for eligible completed observations.</p>
+      </section>
+
+      <section class="module" aria-labelledby="incident-title">
+        <div class="section-top"><span class="step">02 / INCIDENT HISTORY</span><span class="chip" id="incident-count">0 records</span></div>
+        <h2 id="incident-title">What should not happen twice?</h2>
+        <p>Review illustrative incidents, link each to a preventive action, or add a synthetic example. A prevention action must be tracked separately from a claim that recurrence was actually reduced.</p>
+        <div class="table-wrap"><table><caption class="sr-only">Synthetic software incidents</caption><thead><tr><th scope="col">Incident and signal</th><th scope="col">Severity</th><th scope="col">Investigation</th><th scope="col">Prevention link</th></tr></thead><tbody id="incident-table"></tbody></table></div>
+        <form id="incident-form" class="incident-form">
+          <h3>Add an illustrative incident</h3>
+          <div class="form-grid three">
+            <label>Short description<input id="incident-title-input" maxlength="85" placeholder="Example: call setup timeout" required></label>
+            <label>Signal<select id="incident-signal"><option value="latency">Latency</option><option value="success">Failed completion</option><option value="retry">Retries</option><option value="cost">Cost</option></select></label>
+            <label>Severity<select id="incident-severity"><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option></select></label>
+          </div>
+          <button class="button light" type="submit">Add synthetic incident</button>
+        </form>
+      </section>
+
+      <section class="module" aria-labelledby="controls-title">
+        <div class="section-top"><span class="step">04 / PREVENTION CONTROLS</span><span class="chip">Proposed only</span></div>
+        <h2 id="controls-title">Which safeguards would you design?</h2>
+        <p>Select proposed controls to see coverage of the prevention plan. Selecting a control does not clear a failed benchmark or imply that the control was deployed or effective.</p>
+        <div class="control-list">
+          <label class="control"><input class="control-input" type="checkbox" value="benchmark"><span><strong>Repeatable benchmark gate</strong><small>Evaluate representative journeys before release</small></span></label>
+          <label class="control"><input class="control-input" type="checkbox" value="incident"><span><strong>Incident-to-prevention review</strong><small>Map a finding to an owned test, alert, or runbook update</small></span></label>
+          <label class="control"><input class="control-input" type="checkbox" value="governance"><span><strong>Risk-based approval and exception record</strong><small>Preserve the decision owner, rationale, and evidence</small></span></label>
+          <label class="control"><input class="control-input" type="checkbox" value="cost"><span><strong>Cost-per-completed-action check</strong><small>Compare resource cost against comparable workloads</small></span></label>
+        </div>
+        <div class="coverage"><span>Planned control coverage</span><strong id="control-coverage">0 / 4</strong><div class="track"><div class="bar coverage-bar" id="coverage-bar"></div></div></div>
+      </section>
+    </div>
+
+    <aside class="side-column">
+      <section class="module decision-module" aria-labelledby="risk-title">
+        <div class="section-top"><span class="step">03 / RELEASE-RISK ASSESSMENT</span><span class="chip">Transparent rules</span></div>
+        <h2 id="risk-title">What does the evidence say?</h2>
+        <div class="risk-head"><div class="risk-score" id="risk-score">0</div><div><span class="risk-label" id="risk-tier">Evaluating</span><p id="risk-summary" aria-live="polite">Assessing synthetic evidence.</p></div></div>
+        <div class="score-list" id="score-factors" aria-label="Contributing risk score factors"></div>
+        <div class="evidence-coverage"><label>Pre-release checks completed (%)<input id="test-coverage" type="number" min="0" max="100" step="1"></label><label>Change complexity<select id="complexity"><option value="1">1 - Minor</option><option value="2">2 - Low</option><option value="3">3 - Moderate</option><option value="4">4 - High</option><option value="5">5 - Major</option></select></label></div>
+        <div class="gate" id="gate"><span class="eyebrow">EXAMPLE RELEASE DISPOSITION</span><strong id="gate-title">Evidence required</strong><p id="gate-detail">A human decision with evidence is always required before deployment.</p></div>
+        <p class="note">This score is a transparent, illustrative heuristic, not an AI prediction or a validated likelihood of failure. The displayed disposition cannot deploy or authorize software.</p>
+      </section>
+      <section class="module" aria-labelledby="review-title">
+        <div class="section-top"><span class="step">DECISION RECORD</span><span class="chip">In this session</span></div>
+        <h2 id="review-title">Record a human review.</h2>
+        <form id="decision-form">
+          <label>Reviewer name or role<input id="decision-owner" maxlength="60" placeholder="Example: Engineering lead" required></label>
+          <label>Review outcome<select id="decision-choice"><option value="hold">Hold for further validation</option><option value="mitigate">Mitigation required</option><option value="exception">Document a proposed exception</option></select></label>
+          <label>Evidence and rationale<textarea id="decision-rationale" rows="3" minlength="10" maxlength="500" placeholder="Record evidence, limitations, and next action" required></textarea></label>
+          <button class="button primary full" type="submit">Record example decision</button>
+        </form>
+        <div class="audit-list" id="audit-list" aria-live="polite"><p class="muted">No review decisions recorded yet.</p></div>
+      </section>
+    </aside>
+  </div>
+
+  <section class="outcomes module" id="outcomes" aria-labelledby="outcomes-title">
+    <div class="section-top"><span class="step">05 / MEASURABLE OUTCOMES</span><span class="chip">Synthetic evidence snapshot</span></div>
+    <h2 id="outcomes-title">What could be evaluated?</h2>
+    <p>These are comparisons and process-completeness indicators computed from your synthetic inputs. They are not observed customer outcomes, validated improvements, or proof that PRI caused a change.</p>
+    <div class="outcome-grid">
+      <div><small>p95 time change</small><strong id="out-p95">-</strong><span>Candidate vs baseline</span></div>
+      <div><small>Completion change</small><strong id="out-success">-</strong><span>Percentage points</span></div>
+      <div><small>Retry change</small><strong id="out-retry">-</strong><span>Percentage points</span></div>
+      <div><small>Unit cost change</small><strong id="out-cost">-</strong><span>Candidate vs baseline</span></div>
+      <div><small>Incidents with prevention links</small><strong id="out-prevention">-</strong><span>Documented, not verified effective</span></div>
+      <div><small>Documented review decisions</small><strong id="out-decisions">0</strong><span>Session only</span></div>
+    </div>
+    <div class="outcome-footer"><p>To establish real effectiveness, a future pilot would need comparable workload samples, observation periods, control adoption evidence, and a check for confounding changes.</p><button id="export-demo" type="button" class="button light">Export synthetic evidence JSON <span aria-hidden="true">↓</span></button></div>
+    <p id="app-status" class="sr-only" role="status"></p>
+  </section>
+
+  <section class="method-note">
+    <div><p class="eyebrow">HOW TO INTERPRET THE SANDBOX</p><h2>A documented process is not a validated predictor.</h2></div>
+    <p>The initial PRI workflow is measurement → incident learning → transparent release-risk criteria → documented prevention controls → outcome review. Predictive scoring would require a separately developed labeled dataset and validation. No customer information, private repositories, proprietary employer data, or external service integrations are used here. <a href="resources/pri-sandbox-guide.md">Read the model rules and limitations.</a></p>
+  </section>
+</main>
+<footer class="site-footer"><span>PRI · Performance Risk Intelligence</span><span>Interactive synthetic demonstration, not a production tool</span><a href="index.html">Back to PRI overview ↗</a></footer>
+</body>
+</html>
