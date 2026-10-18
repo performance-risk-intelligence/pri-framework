@@ -1,0 +1,1558 @@
+{
+  "study": "PRI queue and release safety discrete-event simulation",
+  "version": "1.0.0",
+  "classification": "Modeled experiment, not a running-service benchmark or customer outcome",
+  "config": {
+    "seed": 20261018,
+    "replications": 4,
+    "duration_s": 1800,
+    "base_rps": 40,
+    "peak_rps": 70,
+    "peak_start_s": 480,
+    "peak_end_s": 1080,
+    "workers": 8,
+    "mean_cpu_s": 0.085,
+    "cpu_sigma": 0.35,
+    "bad_multiplier": 2.0,
+    "release_s": 600,
+    "fix_s": 1200,
+    "attempt_timeout_s": 0.8,
+    "journey_deadline_s": 2.0,
+    "retry_delay_s": 0.12,
+    "max_retries": 1,
+    "alarm_failure_fraction": 0.02,
+    "alarm_p95_ratio": 1.2,
+    "alarm_windows": 2,
+    "rollback_delay_s": 0,
+    "preflight_s": 60,
+    "preflight_rps": 70,
+    "min_coverage": 0.99,
+    "latency_limit_pct": 10,
+    "failure_limit_pp": 1
+  },
+  "replications": [
+    {
+      "seed": 20261018,
+      "control": {
+        "offered": 89657,
+        "completed": 56789,
+        "failed": 32868,
+        "failure_pct": 36.65971424428656,
+        "p50_ms": 81.85196359454494,
+        "p95_ms": 151.5238339993402,
+        "all_outcome_p95_ms": 1719.9999999999136,
+        "cpu_s_per_completion": 0.15215432226052888,
+        "total_journey_s": 62028.113975262466,
+        "success_latency_s": 5495.153975265758,
+        "cpu_s": 8640.691806853174,
+        "retries": 33083,
+        "attempts": 122740,
+        "started_attempts": 92859,
+        "cancelled_queued_attempts": 29881,
+        "max_queue": 164,
+        "alarm_s": 780,
+        "rollback_s": 780,
+        "drain_end_s": 1801.9845203640455
+      },
+      "pri": {
+        "offered": 89657,
+        "completed": 89657,
+        "failed": 0,
+        "failure_pct": 0.0,
+        "p50_ms": 83.71820191837287,
+        "p95_ms": 152.10456271465773,
+        "all_outcome_p95_ms": 152.10456271465773,
+        "cpu_s_per_completion": 0.085174823030358,
+        "total_journey_s": 8017.957715943445,
+        "success_latency_s": 8017.957715943445,
+        "cpu_s": 7636.519108432808,
+        "retries": 0,
+        "attempts": 89657,
+        "started_attempts": 89657,
+        "cancelled_queued_attempts": 0,
+        "max_queue": 18,
+        "alarm_s": null,
+        "rollback_s": null,
+        "drain_end_s": 1801.9845203640455
+      },
+      "preflight_cpu_s": 1225.260450623939
+    },
+    {
+      "seed": 20261019,
+      "control": {
+        "offered": 90348,
+        "completed": 56936,
+        "failed": 33412,
+        "failure_pct": 36.981449506353215,
+        "p50_ms": 81.65556132905749,
+        "p95_ms": 151.2082512317807,
+        "all_outcome_p95_ms": 1719.9999999999136,
+        "cpu_s_per_completion": 0.15212668815930436,
+        "total_journey_s": 62967.26196758671,
+        "success_latency_s": 5498.62196759003,
+        "cpu_s": 8661.485117038153,
+        "retries": 33633,
+        "attempts": 123981,
+        "started_attempts": 93343,
+        "cancelled_queued_attempts": 30638,
+        "max_queue": 158,
+        "alarm_s": 780,
+        "rollback_s": 780,
+        "drain_end_s": 1801.9930916100955
+      },
+      "pri": {
+        "offered": 90348,
+        "completed": 90348,
+        "failed": 0,
+        "failure_pct": 0.0,
+        "p50_ms": 83.6614151107824,
+        "p95_ms": 153.06622370079026,
+        "all_outcome_p95_ms": 153.06622370079026,
+        "cpu_s_per_completion": 0.08494429871531567,
+        "total_journey_s": 8089.231781143238,
+        "success_latency_s": 8089.231781143238,
+        "cpu_s": 7674.54750033134,
+        "retries": 0,
+        "attempts": 90348,
+        "started_attempts": 90348,
+        "cancelled_queued_attempts": 0,
+        "max_queue": 18,
+        "alarm_s": null,
+        "rollback_s": null,
+        "drain_end_s": 1801.9930916100955
+      },
+      "preflight_cpu_s": 1218.513864926825
+    },
+    {
+      "seed": 20261020,
+      "control": {
+        "offered": 89949,
+        "completed": 56513,
+        "failed": 33436,
+        "failure_pct": 37.17217534380593,
+        "p50_ms": 81.6539378280936,
+        "p95_ms": 150.21310976576387,
+        "all_outcome_p95_ms": 1719.9999999999136,
+        "cpu_s_per_completion": 0.15271514898151478,
+        "total_journey_s": 62856.57756864203,
+        "success_latency_s": 5346.6575686453625,
+        "cpu_s": 8630.391214392344,
+        "retries": 33611,
+        "attempts": 123560,
+        "started_attempts": 92879,
+        "cancelled_queued_attempts": 30681,
+        "max_queue": 155,
+        "alarm_s": 780,
+        "rollback_s": 780,
+        "drain_end_s": 1801.9969330330016
+      },
+      "pri": {
+        "offered": 89949,
+        "completed": 89949,
+        "failed": 0,
+        "failure_pct": 0.0,
+        "p50_ms": 83.78351453575306,
+        "p95_ms": 152.78305801571148,
+        "all_outcome_p95_ms": 152.78305801571148,
+        "cpu_s_per_completion": 0.08514448853563263,
+        "total_journey_s": 8051.974485809578,
+        "success_latency_s": 8051.974485809578,
+        "cpu_s": 7658.661599291619,
+        "retries": 0,
+        "attempts": 89949,
+        "started_attempts": 89949,
+        "cancelled_queued_attempts": 0,
+        "max_queue": 17,
+        "alarm_s": null,
+        "rollback_s": null,
+        "drain_end_s": 1801.9969330330016
+      },
+      "preflight_cpu_s": 1188.2007994634882
+    },
+    {
+      "seed": 20261021,
+      "control": {
+        "offered": 89928,
+        "completed": 57034,
+        "failed": 32894,
+        "failure_pct": 36.5781514100169,
+        "p50_ms": 81.89765854623943,
+        "p95_ms": 153.7816320952487,
+        "all_outcome_p95_ms": 1719.9999999999136,
+        "cpu_s_per_completion": 0.1515587359194425,
+        "total_journey_s": 62269.56895124311,
+        "success_latency_s": 5691.888951246396,
+        "cpu_s": 8644.000944429483,
+        "retries": 33185,
+        "attempts": 123113,
+        "started_attempts": 95907,
+        "cancelled_queued_attempts": 27206,
+        "max_queue": 158,
+        "alarm_s": 720,
+        "rollback_s": 720,
+        "drain_end_s": 1801.991108959469
+      },
+      "pri": {
+        "offered": 89928,
+        "completed": 89928,
+        "failed": 0,
+        "failure_pct": 0.0,
+        "p50_ms": 83.66422153721942,
+        "p95_ms": 152.03312709436997,
+        "all_outcome_p95_ms": 152.03312709436997,
+        "cpu_s_per_completion": 0.08504026942318571,
+        "total_journey_s": 8040.1587868546185,
+        "success_latency_s": 8040.1587868546185,
+        "cpu_s": 7647.501348688244,
+        "retries": 0,
+        "attempts": 89928,
+        "started_attempts": 89928,
+        "cancelled_queued_attempts": 0,
+        "max_queue": 20,
+        "alarm_s": null,
+        "rollback_s": null,
+        "drain_end_s": 1801.991108959469
+      },
+      "preflight_cpu_s": 1217.893376409934
+    }
+  ],
+  "preflights": [
+    {
+      "seed": 20261018,
+      "baseline": {
+        "offered": 4277,
+        "failed": 0,
+        "p95_ms": 168.4705185014209,
+        "cpu_s": 364.94063193092046
+      },
+      "faulty": {
+        "offered": 4277,
+        "failed": 4171,
+        "p95_ms": 741.2152709013906,
+        "cpu_s": 493.379186762098
+      },
+      "corrected": {
+        "offered": 4277,
+        "failed": 0,
+        "p95_ms": 168.4705185014209,
+        "cpu_s": 364.94063193092046
+      },
+      "faulty_assessment": {
+        "disposition": "HOLD_REGRESSION",
+        "latency_delta_pct": 339.967347103012,
+        "failure_delta_pp": 97.52162730886135,
+        "reason": "Observed preflight metrics compared with specified materiality limits"
+      },
+      "corrected_assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "latency_delta_pct": 0.0,
+        "failure_delta_pp": 0.0,
+        "reason": "Observed preflight metrics compared with specified materiality limits"
+      },
+      "modeled_analysis_cpu_s": 2.0,
+      "approval": {
+        "artifact_digest": "96613a7587ef1892d7d50422e77e1f8e2c5f0d4a03b9ed47a282a88f4527fbea",
+        "policy_version": "demo-policy-1",
+        "issued_s": 1200,
+        "expires_s": 1500,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "bad_release_promoted": false,
+      "corrected_release_promoted": true
+    },
+    {
+      "seed": 20261019,
+      "baseline": {
+        "offered": 4213,
+        "failed": 0,
+        "p95_ms": 164.7872638206298,
+        "cpu_s": 361.46159274292444
+      },
+      "faulty": {
+        "offered": 4213,
+        "failed": 4137,
+        "p95_ms": 735.1209489386349,
+        "cpu_s": 493.590679440976
+      },
+      "corrected": {
+        "offered": 4213,
+        "failed": 0,
+        "p95_ms": 164.7872638206298,
+        "cpu_s": 361.46159274292444
+      },
+      "faulty_assessment": {
+        "disposition": "HOLD_REGRESSION",
+        "latency_delta_pct": 346.10301299669055,
+        "failure_delta_pp": 98.19605981485877,
+        "reason": "Observed preflight metrics compared with specified materiality limits"
+      },
+      "corrected_assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "latency_delta_pct": 0.0,
+        "failure_delta_pp": 0.0,
+        "reason": "Observed preflight metrics compared with specified materiality limits"
+      },
+      "modeled_analysis_cpu_s": 2.0,
+      "approval": {
+        "artifact_digest": "96613a7587ef1892d7d50422e77e1f8e2c5f0d4a03b9ed47a282a88f4527fbea",
+        "policy_version": "demo-policy-1",
+        "issued_s": 1200,
+        "expires_s": 1500,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "bad_release_promoted": false,
+      "corrected_release_promoted": true
+    },
+    {
+      "seed": 20261020,
+      "baseline": {
+        "offered": 4067,
+        "failed": 0,
+        "p95_ms": 152.92604098910266,
+        "cpu_s": 346.5032144457455
+      },
+      "faulty": {
+        "offered": 4067,
+        "failed": 3936,
+        "p95_ms": 764.4733180625171,
+        "cpu_s": 493.1943705719973
+      },
+      "corrected": {
+        "offered": 4067,
+        "failed": 0,
+        "p95_ms": 152.92604098910266,
+        "cpu_s": 346.5032144457455
+      },
+      "faulty_assessment": {
+        "disposition": "HOLD_REGRESSION",
+        "latency_delta_pct": 399.89740996237043,
+        "failure_delta_pp": 96.77895254487338,
+        "reason": "Observed preflight metrics compared with specified materiality limits"
+      },
+      "corrected_assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "latency_delta_pct": 0.0,
+        "failure_delta_pp": 0.0,
+        "reason": "Observed preflight metrics compared with specified materiality limits"
+      },
+      "modeled_analysis_cpu_s": 2.0,
+      "approval": {
+        "artifact_digest": "96613a7587ef1892d7d50422e77e1f8e2c5f0d4a03b9ed47a282a88f4527fbea",
+        "policy_version": "demo-policy-1",
+        "issued_s": 1200,
+        "expires_s": 1500,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "bad_release_promoted": false,
+      "corrected_release_promoted": true
+    },
+    {
+      "seed": 20261021,
+      "baseline": {
+        "offered": 4217,
+        "failed": 0,
+        "p95_ms": 162.82661915969638,
+        "cpu_s": 361.1202072366433
+      },
+      "faulty": {
+        "offered": 4217,
+        "failed": 4105,
+        "p95_ms": 783.5676681971129,
+        "cpu_s": 493.6529619366474
+      },
+      "corrected": {
+        "offered": 4217,
+        "failed": 0,
+        "p95_ms": 162.82661915969638,
+        "cpu_s": 361.1202072366433
+      },
+      "faulty_assessment": {
+        "disposition": "HOLD_REGRESSION",
+        "latency_delta_pct": 381.22823666111304,
+        "failure_delta_pp": 97.34408347166232,
+        "reason": "Observed preflight metrics compared with specified materiality limits"
+      },
+      "corrected_assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "latency_delta_pct": 0.0,
+        "failure_delta_pp": 0.0,
+        "reason": "Observed preflight metrics compared with specified materiality limits"
+      },
+      "modeled_analysis_cpu_s": 2.0,
+      "approval": {
+        "artifact_digest": "96613a7587ef1892d7d50422e77e1f8e2c5f0d4a03b9ed47a282a88f4527fbea",
+        "policy_version": "demo-policy-1",
+        "issued_s": 1200,
+        "expires_s": 1500,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "bad_release_promoted": false,
+      "corrected_release_promoted": true
+    }
+  ],
+  "delta_summary": {
+    "failed": {
+      "mean": 33152.5,
+      "min": 32868,
+      "max": 33436,
+      "mean_ci95": [
+        32881.0,
+        33424.0
+      ]
+    },
+    "retries": {
+      "mean": 33378,
+      "min": 33083,
+      "max": 33633,
+      "mean_ci95": [
+        33134.0,
+        33622.0
+      ]
+    },
+    "cpu_s": {
+      "mean": 989.8348814922858,
+      "min": 971.7296151007258,
+      "max": 1004.172698420366,
+      "mean_ci95": [
+        977.922110260854,
+        1000.3361470808022
+      ]
+    },
+    "total_journey_s": {
+      "mean": 54480.54992324586,
+      "min": 54010.15625931902,
+      "max": 54878.03018644347,
+      "mean_ci95": [
+        54119.783211853755,
+        54841.31663463796
+      ]
+    },
+    "completed": {
+      "mean": 33152.5,
+      "min": 32868,
+      "max": 33436,
+      "mean_ci95": [
+        32881.0,
+        33424.0
+      ]
+    },
+    "p95_ms": {
+      "mean": -0.8150361083489841,
+      "min": -2.5699482499476005,
+      "max": 1.7485050008787368,
+      "mean_ci95": [
+        -2.213960359478577,
+        0.8468856334066643
+      ]
+    },
+    "all_outcome_p95_ms": {
+      "mean": 1567.503257118531,
+      "min": 1566.9337762991233,
+      "max": 1567.9668729055436,
+      "mean_ci95": [
+        1567.0753591416628,
+        1567.9311550953998
+      ]
+    }
+  },
+  "preflight_overhead_cpu_s": {
+    "mean": 1212.4671228560464,
+    "min": 1188.2007994634882,
+    "max": 1225.260450623939,
+    "mean_ci95": [
+      1195.7790658293225,
+      1223.4186820704379
+    ]
+  },
+  "net_cpu_s_per_incident_including_preflight": {
+    "mean": -222.63224136376073,
+    "min": -231.57624822001185,
+    "max": -216.47118436276241,
+    "mean_ci95": [
+      -228.95412421590214,
+      -217.70183343924572
+    ]
+  },
+  "economics": {
+    "assumptions": {
+      "events_per_service_year": 6,
+      "releases_per_service_year": 52,
+      "effect_transfer_fraction": 0.5,
+      "execution_value_per_vcpu_hour": 0.05,
+      "response_person_hours_control": 4,
+      "response_person_hours_pri": 1,
+      "loaded_labor_usd_hour": 100,
+      "setup_hours_per_service": 24,
+      "annual_maintenance_hours_per_service": 12,
+      "annual_noncompute_usd_per_service": 120
+    },
+    "response_credit_eligible": true,
+    "one_service": {
+      "annual_net_cpu_hours": -16.68855159556599,
+      "first_year_net_usd": -2820.834427579778,
+      "ongoing_annual_net_usd": -420.8344275797783,
+      "ongoing_break_even_events": 8.805434289572709,
+      "first_year_break_even_events": 24.80470111214774
+    },
+    "scales": [
+      {
+        "label": "One service",
+        "distinct_services": 1,
+        "annual_failed_journeys_avoided": 99457.5,
+        "annual_retry_attempts_avoided": 100134.0,
+        "annual_journey_hours_recovered": 45.400458269371555,
+        "annual_net_cpu_hours": -16.68855159556599,
+        "annual_response_hours_avoided": 9.0,
+        "first_year_net_usd": -2820.834427579778,
+        "ongoing_annual_net_usd": -420.8344275797783,
+        "fixed_fleet_cash_compute_savings_usd": 0
+      },
+      {
+        "label": "Organization portfolio",
+        "distinct_services": 25,
+        "annual_failed_journeys_avoided": 2486437.5,
+        "annual_retry_attempts_avoided": 2503350.0,
+        "annual_journey_hours_recovered": 1135.011456734289,
+        "annual_net_cpu_hours": -417.2137898891497,
+        "annual_response_hours_avoided": 225.0,
+        "first_year_net_usd": -70520.86068949445,
+        "ongoing_annual_net_usd": -10520.860689494459,
+        "fixed_fleet_cash_compute_savings_usd": 0
+      },
+      {
+        "label": "Cross-industry scenario",
+        "distinct_services": 1000,
+        "annual_failed_journeys_avoided": 99457500.0,
+        "annual_retry_attempts_avoided": 100134000.0,
+        "annual_journey_hours_recovered": 45400.45826937156,
+        "annual_net_cpu_hours": -16688.55159556599,
+        "annual_response_hours_avoided": 9000.0,
+        "first_year_net_usd": -2820834.4275797782,
+        "ongoing_annual_net_usd": -420834.4275797783,
+        "fixed_fleet_cash_compute_savings_usd": 0
+      },
+      {
+        "label": "Nationwide adoption scenario",
+        "distinct_services": 10000,
+        "annual_failed_journeys_avoided": 994575000.0,
+        "annual_retry_attempts_avoided": 1001340000.0,
+        "annual_journey_hours_recovered": 454004.5826937155,
+        "annual_net_cpu_hours": -166885.5159556599,
+        "annual_response_hours_avoided": 90000.0,
+        "first_year_net_usd": -28208344.27579778,
+        "ongoing_annual_net_usd": -4208344.275797783,
+        "fixed_fleet_cash_compute_savings_usd": 0
+      }
+    ],
+    "interpretation": "Conditional arithmetic for distinct comparable services. Not a forecast, national estimate, measured invoice saving or GDP impact. Response hours are assumptions. Fixed provisioned fleet has zero demonstrated bill reduction."
+  },
+  "representative": {
+    "control": {
+      "offered": 89657,
+      "completed": 56789,
+      "failed": 32868,
+      "failure_pct": 36.65971424428656,
+      "p50_ms": 81.85196359454494,
+      "p95_ms": 151.5238339993402,
+      "all_outcome_p95_ms": 1719.9999999999136,
+      "cpu_s_per_completion": 0.15215432226052888,
+      "total_journey_s": 62028.113975262466,
+      "success_latency_s": 5495.153975265758,
+      "cpu_s": 8640.691806853174,
+      "retries": 33083,
+      "attempts": 122740,
+      "started_attempts": 92859,
+      "cancelled_queued_attempts": 29881,
+      "max_queue": 164,
+      "alarm_s": 780,
+      "rollback_s": 780,
+      "drain_end_s": 1801.9845203640455,
+      "timeline": [
+        {
+          "minute": 0,
+          "offered": 2357,
+          "completed": 2357,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 198.62317629703756,
+          "p95_ms": 141.2124844065815,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 1,
+          "offered": 2415,
+          "completed": 2415,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 206.95487787700125,
+          "p95_ms": 144.13010783416945,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 2,
+          "offered": 2417,
+          "completed": 2417,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 204.15460433578468,
+          "p95_ms": 139.93988696816177,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 3,
+          "offered": 2400,
+          "completed": 2400,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 202.45506157991957,
+          "p95_ms": 142.77491462273127,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 4,
+          "offered": 2449,
+          "completed": 2449,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 210.33185509628714,
+          "p95_ms": 145.33351113530557,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 5,
+          "offered": 2385,
+          "completed": 2385,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 202.66128932057592,
+          "p95_ms": 142.93202313904203,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 6,
+          "offered": 2425,
+          "completed": 2425,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 207.27474711309623,
+          "p95_ms": 142.21934945888952,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 7,
+          "offered": 2334,
+          "completed": 2334,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 199.82035917158117,
+          "p95_ms": 144.80521108574175,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 8,
+          "offered": 4205,
+          "completed": 4205,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 358.7642528992267,
+          "p95_ms": 162.57578641476576,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 9,
+          "offered": 4167,
+          "completed": 4167,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 356.36128471601626,
+          "p95_ms": 154.83071987503075,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 10,
+          "offered": 4113,
+          "completed": 102,
+          "failed": 4011,
+          "retries": 4011,
+          "cpu_s": 479.99143468593445,
+          "p95_ms": 760.5865440449462,
+          "failure_pct": 97.5200583515682
+        },
+        {
+          "minute": 11,
+          "offered": 4183,
+          "completed": 0,
+          "failed": 4183,
+          "retries": 4183,
+          "cpu_s": 480.0,
+          "p95_ms": null,
+          "failure_pct": 100.0
+        },
+        {
+          "minute": 12,
+          "offered": 4145,
+          "completed": 1,
+          "failed": 4144,
+          "retries": 4145,
+          "cpu_s": 480.0,
+          "p95_ms": 1712.8562528779412,
+          "failure_pct": 99.97587454764776
+        },
+        {
+          "minute": 13,
+          "offered": 4172,
+          "completed": 77,
+          "failed": 4095,
+          "retries": 4128,
+          "cpu_s": 480.0,
+          "p95_ms": 1719.679121748709,
+          "failure_pct": 98.15436241610739
+        },
+        {
+          "minute": 14,
+          "offered": 4161,
+          "completed": 120,
+          "failed": 4041,
+          "retries": 4086,
+          "cpu_s": 480.0,
+          "p95_ms": 1718.9718953485908,
+          "failure_pct": 97.11607786589762
+        },
+        {
+          "minute": 15,
+          "offered": 4157,
+          "completed": 52,
+          "failed": 4105,
+          "retries": 4129,
+          "cpu_s": 480.0,
+          "p95_ms": 1718.5184147238658,
+          "failure_pct": 98.74909790714457
+        },
+        {
+          "minute": 16,
+          "offered": 4134,
+          "completed": 105,
+          "failed": 4029,
+          "retries": 4073,
+          "cpu_s": 480.0,
+          "p95_ms": 1718.7054687014097,
+          "failure_pct": 97.46008708272859
+        },
+        {
+          "minute": 17,
+          "offered": 4331,
+          "completed": 78,
+          "failed": 4253,
+          "retries": 4298,
+          "cpu_s": 480.0,
+          "p95_ms": 1718.9705409835597,
+          "failure_pct": 98.1990302470561
+        },
+        {
+          "minute": 18,
+          "offered": 2323,
+          "completed": 2316,
+          "failed": 7,
+          "retries": 30,
+          "cpu_s": 209.50113445332954,
+          "p95_ms": 163.0317485334558,
+          "failure_pct": 0.30133448127421436
+        },
+        {
+          "minute": 19,
+          "offered": 2403,
+          "completed": 2403,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 203.94457062456377,
+          "p95_ms": 142.69476036379274,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 20,
+          "offered": 2446,
+          "completed": 2446,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 204.47073494826282,
+          "p95_ms": 137.83539572682457,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 21,
+          "offered": 2314,
+          "completed": 2314,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 200.63641523349384,
+          "p95_ms": 148.7121907316009,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 22,
+          "offered": 2311,
+          "completed": 2311,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 198.67117442312542,
+          "p95_ms": 143.3193749230668,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 23,
+          "offered": 2408,
+          "completed": 2408,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 205.56280279094335,
+          "p95_ms": 143.48536722915242,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 24,
+          "offered": 2436,
+          "completed": 2436,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 207.64265944625527,
+          "p95_ms": 145.69569737966503,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 25,
+          "offered": 2338,
+          "completed": 2338,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 196.35572925566703,
+          "p95_ms": 141.04910942845663,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 26,
+          "offered": 2525,
+          "completed": 2525,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 214.96388374292815,
+          "p95_ms": 143.86191497110298,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 27,
+          "offered": 2360,
+          "completed": 2360,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 200.89018441330154,
+          "p95_ms": 140.35191931465076,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 28,
+          "offered": 2420,
+          "completed": 2420,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 204.77208841981087,
+          "p95_ms": 141.18014879230705,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 29,
+          "offered": 2423,
+          "completed": 2423,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 205.88748600902795,
+          "p95_ms": 140.88408024495038,
+          "failure_pct": 0.0
+        }
+      ]
+    },
+    "pri": {
+      "offered": 89657,
+      "completed": 89657,
+      "failed": 0,
+      "failure_pct": 0.0,
+      "p50_ms": 83.71820191837287,
+      "p95_ms": 152.10456271465773,
+      "all_outcome_p95_ms": 152.10456271465773,
+      "cpu_s_per_completion": 0.085174823030358,
+      "total_journey_s": 8017.957715943445,
+      "success_latency_s": 8017.957715943445,
+      "cpu_s": 7636.519108432808,
+      "retries": 0,
+      "attempts": 89657,
+      "started_attempts": 89657,
+      "cancelled_queued_attempts": 0,
+      "max_queue": 18,
+      "alarm_s": null,
+      "rollback_s": null,
+      "drain_end_s": 1801.9845203640455,
+      "timeline": [
+        {
+          "minute": 0,
+          "offered": 2357,
+          "completed": 2357,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 198.62317629703756,
+          "p95_ms": 141.2124844065815,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 1,
+          "offered": 2415,
+          "completed": 2415,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 206.95487787700125,
+          "p95_ms": 144.13010783416945,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 2,
+          "offered": 2417,
+          "completed": 2417,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 204.15460433578468,
+          "p95_ms": 139.93988696816177,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 3,
+          "offered": 2400,
+          "completed": 2400,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 202.45506157991957,
+          "p95_ms": 142.77491462273127,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 4,
+          "offered": 2449,
+          "completed": 2449,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 210.33185509628714,
+          "p95_ms": 145.33351113530557,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 5,
+          "offered": 2385,
+          "completed": 2385,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 202.66128932057592,
+          "p95_ms": 142.93202313904203,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 6,
+          "offered": 2425,
+          "completed": 2425,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 207.27474711309623,
+          "p95_ms": 142.21934945888952,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 7,
+          "offered": 2334,
+          "completed": 2334,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 199.82035917158117,
+          "p95_ms": 144.80521108574175,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 8,
+          "offered": 4205,
+          "completed": 4205,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 358.7642528992267,
+          "p95_ms": 162.57578641476576,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 9,
+          "offered": 4167,
+          "completed": 4167,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 356.36128471601626,
+          "p95_ms": 154.83071987503075,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 10,
+          "offered": 4113,
+          "completed": 4113,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 349.91736688144795,
+          "p95_ms": 169.85453588563357,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 11,
+          "offered": 4183,
+          "completed": 4183,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 358.4556198536384,
+          "p95_ms": 164.87583273853943,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 12,
+          "offered": 4145,
+          "completed": 4145,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 353.9983705373528,
+          "p95_ms": 158.52165523199346,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 13,
+          "offered": 4172,
+          "completed": 4172,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 355.7953707486248,
+          "p95_ms": 162.46310581018972,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 14,
+          "offered": 4161,
+          "completed": 4161,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 353.604400629706,
+          "p95_ms": 153.83288443058518,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 15,
+          "offered": 4157,
+          "completed": 4157,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 358.08133786201495,
+          "p95_ms": 159.04451259275444,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 16,
+          "offered": 4134,
+          "completed": 4134,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 350.9512205666167,
+          "p95_ms": 161.94640418285644,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 17,
+          "offered": 4331,
+          "completed": 4331,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 368.52458928809756,
+          "p95_ms": 163.93150059855088,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 18,
+          "offered": 2323,
+          "completed": 2323,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 195.99159435142087,
+          "p95_ms": 138.99605415813312,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 19,
+          "offered": 2403,
+          "completed": 2403,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 203.94457062456377,
+          "p95_ms": 142.69476036379274,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 20,
+          "offered": 2446,
+          "completed": 2446,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 204.47073494826282,
+          "p95_ms": 137.83539572682457,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 21,
+          "offered": 2314,
+          "completed": 2314,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 200.63641523349384,
+          "p95_ms": 148.7121907316009,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 22,
+          "offered": 2311,
+          "completed": 2311,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 198.67117442312542,
+          "p95_ms": 143.3193749230668,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 23,
+          "offered": 2408,
+          "completed": 2408,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 205.56280279094335,
+          "p95_ms": 143.48536722915242,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 24,
+          "offered": 2436,
+          "completed": 2436,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 207.64265944625527,
+          "p95_ms": 145.69569737966503,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 25,
+          "offered": 2338,
+          "completed": 2338,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 196.35572925566703,
+          "p95_ms": 141.04910942845663,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 26,
+          "offered": 2525,
+          "completed": 2525,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 214.96388374292815,
+          "p95_ms": 143.86191497110298,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 27,
+          "offered": 2360,
+          "completed": 2360,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 200.89018441330154,
+          "p95_ms": 140.35191931465076,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 28,
+          "offered": 2420,
+          "completed": 2420,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 204.77208841981087,
+          "p95_ms": 141.18014879230705,
+          "failure_pct": 0.0
+        },
+        {
+          "minute": 29,
+          "offered": 2423,
+          "completed": 2423,
+          "failed": 0,
+          "retries": 0,
+          "cpu_s": 205.88748600902795,
+          "p95_ms": 140.88408024495038,
+          "failure_pct": 0.0
+        }
+      ]
+    },
+    "preflight": {
+      "seed": 20261018,
+      "baseline": {
+        "offered": 4277,
+        "failed": 0,
+        "p95_ms": 168.4705185014209,
+        "cpu_s": 364.94063193092046
+      },
+      "faulty": {
+        "offered": 4277,
+        "failed": 4171,
+        "p95_ms": 741.2152709013906,
+        "cpu_s": 493.379186762098
+      },
+      "corrected": {
+        "offered": 4277,
+        "failed": 0,
+        "p95_ms": 168.4705185014209,
+        "cpu_s": 364.94063193092046
+      },
+      "faulty_assessment": {
+        "disposition": "HOLD_REGRESSION",
+        "latency_delta_pct": 339.967347103012,
+        "failure_delta_pp": 97.52162730886135,
+        "reason": "Observed preflight metrics compared with specified materiality limits"
+      },
+      "corrected_assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "latency_delta_pct": 0.0,
+        "failure_delta_pp": 0.0,
+        "reason": "Observed preflight metrics compared with specified materiality limits"
+      },
+      "modeled_analysis_cpu_s": 2.0,
+      "approval": {
+        "artifact_digest": "96613a7587ef1892d7d50422e77e1f8e2c5f0d4a03b9ed47a282a88f4527fbea",
+        "policy_version": "demo-policy-1",
+        "issued_s": 1200,
+        "expires_s": 1500,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "bad_release_promoted": false,
+      "corrected_release_promoted": true
+    }
+  },
+  "business_impact": {
+    "version": "1.0",
+    "classification": "Conditional consequence overlay, not observed business outcomes",
+    "sources": [
+      {
+        "id": "bls-wages",
+        "url": "https://www.bls.gov/news.release/archives/ocwage_04022025.pdf",
+        "title": "BLS May 2024 occupational wages (released April 2, 2025)",
+        "facts": "Median hourly wages: customer service representatives $20.59; software developers $63.98. Historical national reference, not an Irvine quote."
+      },
+      {
+        "id": "bls-benefits",
+        "url": "https://www.bls.gov/news.release/archives/ecec_06132025.pdf",
+        "title": "BLS March 2025 employer compensation (released June 13, 2025)",
+        "facts": "Private industry total compensation $45.38/hour versus wages $31.89/hour. Cross-occupation loading proxy 45.38/31.89, not occupation-specific overhead."
+      },
+      {
+        "id": "sre-response",
+        "url": "https://sre.google/workbook/incident-response/",
+        "title": "Google SRE Workbook: Incident Response",
+        "facts": "Separates coordination, communication and operational response. Supports task separation, not the assumed hours or PRI savings."
+      },
+      {
+        "id": "finops-units",
+        "url": "https://www.finops.org/framework/capabilities/unit-economics/",
+        "title": "FinOps Foundation: Unit Economics",
+        "facts": "Supports relating cost to business units. Does not validate this scenario, loss rates or projected savings."
+      }
+    ],
+    "profiles": {
+      "no_business": {
+        "label": "No business consequences priced",
+        "transaction_share": 0,
+        "support_fraction": 0,
+        "manual_fraction": 0
+      },
+      "low": {
+        "label": "Low consequence",
+        "transaction_share": 0.02,
+        "unrecovered_fraction": 0.05,
+        "contribution_usd": 5,
+        "support_fraction": 0.005,
+        "support_minutes": 4,
+        "manual_fraction": 0.005,
+        "manual_minutes": 2
+      },
+      "base": {
+        "label": "Reference transaction scenario"
+      },
+      "high": {
+        "label": "Higher consequence",
+        "transaction_share": 0.1,
+        "unrecovered_fraction": 0.2,
+        "contribution_usd": 15,
+        "support_fraction": 0.02,
+        "support_minutes": 8,
+        "manual_fraction": 0.02,
+        "manual_minutes": 5
+      },
+      "public": {
+        "label": "Noncommercial workflow",
+        "transaction_share": 0
+      }
+    },
+    "operating_assumptions": {
+      "events_per_service_year": 6,
+      "releases_per_service_year": 52,
+      "effect_transfer_fraction": 0.5,
+      "execution_value_per_vcpu_hour": 0.05,
+      "response_person_hours_control": 4,
+      "response_person_hours_pri": 1,
+      "loaded_labor_usd_hour": 91.0,
+      "setup_hours_per_service": 24,
+      "annual_maintenance_hours_per_service": 12,
+      "annual_noncompute_usd_per_service": 120
+    },
+    "default": {
+      "profile": "base",
+      "assumptions": {
+        "transaction_share": 0.05,
+        "unrecovered_fraction": 0.1,
+        "contribution_usd": 10.0,
+        "support_fraction": 0.01,
+        "support_minutes": 6.0,
+        "manual_fraction": 0.01,
+        "manual_minutes": 3.0,
+        "operations_usd_hour": 29.3,
+        "routine_review_hours": 0.25
+      },
+      "annual_failed_journeys_avoided": 99457.5,
+      "annual_lost_transactions_prevented": 497.2875,
+      "annual_support_contacts_avoided": 994.575,
+      "annual_manual_cases_avoided": 994.575,
+      "annual_support_hours": 99.45750000000001,
+      "annual_manual_recovery_hours": 49.728750000000005,
+      "annual_incident_response_hours": 9.0,
+      "benefits": {
+        "retained_contribution": 4972.875,
+        "support_capacity": 2914.1047500000004,
+        "manual_recovery_capacity": 1457.0523750000002,
+        "incident_response_capacity": 819.0,
+        "production_compute": 0.04124312006217858
+      },
+      "costs": {
+        "release_testing": 0.8756706998404781,
+        "routine_release_review": 1183.0,
+        "maintenance": 1092.0,
+        "noncompute": 120,
+        "setup": 2184.0
+      },
+      "gross_annual_value": 10163.073368120064,
+      "first_year_net_usd": 5583.197697420223,
+      "ongoing_annual_net_usd": 7767.197697420223,
+      "demonstrated_cash_saving_usd": 0
+    },
+    "scenarios": {
+      "no_business": {
+        "profile": "no_business",
+        "assumptions": {
+          "transaction_share": 0,
+          "unrecovered_fraction": 0.1,
+          "contribution_usd": 10.0,
+          "support_fraction": 0,
+          "support_minutes": 6.0,
+          "manual_fraction": 0,
+          "manual_minutes": 3.0,
+          "operations_usd_hour": 29.3,
+          "routine_review_hours": 0.25
+        },
+        "annual_failed_journeys_avoided": 99457.5,
+        "annual_lost_transactions_prevented": 0.0,
+        "annual_support_contacts_avoided": 0.0,
+        "annual_manual_cases_avoided": 0.0,
+        "annual_support_hours": 0.0,
+        "annual_manual_recovery_hours": 0.0,
+        "annual_incident_response_hours": 9.0,
+        "benefits": {
+          "retained_contribution": 0.0,
+          "support_capacity": 0.0,
+          "manual_recovery_capacity": 0.0,
+          "incident_response_capacity": 819.0,
+          "production_compute": 0.04124312006217858
+        },
+        "costs": {
+          "release_testing": 0.8756706998404781,
+          "routine_release_review": 1183.0,
+          "maintenance": 1092.0,
+          "noncompute": 120,
+          "setup": 2184.0
+        },
+        "gross_annual_value": 819.0412431200622,
+        "first_year_net_usd": -3760.834427579778,
+        "ongoing_annual_net_usd": -1576.834427579778,
+        "demonstrated_cash_saving_usd": 0
+      },
+      "low": {
+        "profile": "low",
+        "assumptions": {
+          "transaction_share": 0.02,
+          "unrecovered_fraction": 0.05,
+          "contribution_usd": 5,
+          "support_fraction": 0.005,
+          "support_minutes": 4,
+          "manual_fraction": 0.005,
+          "manual_minutes": 2,
+          "operations_usd_hour": 29.3,
+          "routine_review_hours": 0.25
+        },
+        "annual_failed_journeys_avoided": 99457.5,
+        "annual_lost_transactions_prevented": 99.45750000000001,
+        "annual_support_contacts_avoided": 497.2875,
+        "annual_manual_cases_avoided": 497.2875,
+        "annual_support_hours": 33.1525,
+        "annual_manual_recovery_hours": 16.57625,
+        "annual_incident_response_hours": 9.0,
+        "benefits": {
+          "retained_contribution": 497.2875,
+          "support_capacity": 971.3682500000001,
+          "manual_recovery_capacity": 485.68412500000005,
+          "incident_response_capacity": 819.0,
+          "production_compute": 0.04124312006217858
+        },
+        "costs": {
+          "release_testing": 0.8756706998404781,
+          "routine_release_review": 1183.0,
+          "maintenance": 1092.0,
+          "noncompute": 120,
+          "setup": 2184.0
+        },
+        "gross_annual_value": 2773.381118120062,
+        "first_year_net_usd": -1806.494552579778,
+        "ongoing_annual_net_usd": 377.505447420222,
+        "demonstrated_cash_saving_usd": 0
+      },
+      "base": {
+        "profile": "base",
+        "assumptions": {
+          "transaction_share": 0.05,
+          "unrecovered_fraction": 0.1,
+          "contribution_usd": 10.0,
+          "support_fraction": 0.01,
+          "support_minutes": 6.0,
+          "manual_fraction": 0.01,
+          "manual_minutes": 3.0,
+          "operations_usd_hour": 29.3,
+          "routine_review_hours": 0.25
+        },
+        "annual_failed_journeys_avoided": 99457.5,
+        "annual_lost_transactions_prevented": 497.2875,
+        "annual_support_contacts_avoided": 994.575,
+        "annual_manual_cases_avoided": 994.575,
+        "annual_support_hours": 99.45750000000001,
+        "annual_manual_recovery_hours": 49.728750000000005,
+        "annual_incident_response_hours": 9.0,
+        "benefits": {
+          "retained_contribution": 4972.875,
+          "support_capacity": 2914.1047500000004,
+          "manual_recovery_capacity": 1457.0523750000002,
+          "incident_response_capacity": 819.0,
+          "production_compute": 0.04124312006217858
+        },
+        "costs": {
+          "release_testing": 0.8756706998404781,
+          "routine_release_review": 1183.0,
+          "maintenance": 1092.0,
+          "noncompute": 120,
+          "setup": 2184.0
+        },
+        "gross_annual_value": 10163.073368120064,
+        "first_year_net_usd": 5583.197697420223,
+        "ongoing_annual_net_usd": 7767.197697420223,
+        "demonstrated_cash_saving_usd": 0
+      },
+      "high": {
+        "profile": "high",
+        "assumptions": {
+          "transaction_share": 0.1,
+          "unrecovered_fraction": 0.2,
+          "contribution_usd": 15,
+          "support_fraction": 0.02,
+          "support_minutes": 8,
+          "manual_fraction": 0.02,
+          "manual_minutes": 5,
+          "operations_usd_hour": 29.3,
+          "routine_review_hours": 0.25
+        },
+        "annual_failed_journeys_avoided": 99457.5,
+        "annual_lost_transactions_prevented": 1989.15,
+        "annual_support_contacts_avoided": 1989.15,
+        "annual_manual_cases_avoided": 1989.15,
+        "annual_support_hours": 265.22,
+        "annual_manual_recovery_hours": 165.7625,
+        "annual_incident_response_hours": 9.0,
+        "benefits": {
+          "retained_contribution": 29837.25,
+          "support_capacity": 7770.946000000001,
+          "manual_recovery_capacity": 4856.8412499999995,
+          "incident_response_capacity": 819.0,
+          "production_compute": 0.04124312006217858
+        },
+        "costs": {
+          "release_testing": 0.8756706998404781,
+          "routine_release_review": 1183.0,
+          "maintenance": 1092.0,
+          "noncompute": 120,
+          "setup": 2184.0
+        },
+        "gross_annual_value": 43284.07849312006,
+        "first_year_net_usd": 38704.20282242022,
+        "ongoing_annual_net_usd": 40888.20282242022,
+        "demonstrated_cash_saving_usd": 0
+      },
+      "public": {
+        "profile": "public",
+        "assumptions": {
+          "transaction_share": 0,
+          "unrecovered_fraction": 0.1,
+          "contribution_usd": 10.0,
+          "support_fraction": 0.01,
+          "support_minutes": 6.0,
+          "manual_fraction": 0.01,
+          "manual_minutes": 3.0,
+          "operations_usd_hour": 29.3,
+          "routine_review_hours": 0.25
+        },
+        "annual_failed_journeys_avoided": 99457.5,
+        "annual_lost_transactions_prevented": 0.0,
+        "annual_support_contacts_avoided": 994.575,
+        "annual_manual_cases_avoided": 994.575,
+        "annual_support_hours": 99.45750000000001,
+        "annual_manual_recovery_hours": 49.728750000000005,
+        "annual_incident_response_hours": 9.0,
+        "benefits": {
+          "retained_contribution": 0.0,
+          "support_capacity": 2914.1047500000004,
+          "manual_recovery_capacity": 1457.0523750000002,
+          "incident_response_capacity": 819.0,
+          "production_compute": 0.04124312006217858
+        },
+        "costs": {
+          "release_testing": 0.8756706998404781,
+          "routine_release_review": 1183.0,
+          "maintenance": 1092.0,
+          "noncompute": 120,
+          "setup": 2184.0
+        },
+        "gross_annual_value": 5190.198368120063,
+        "first_year_net_usd": 610.3226974202225,
+        "ongoing_annual_net_usd": 2794.3226974202225,
+        "demonstrated_cash_saving_usd": 0
+      }
+    }
+  }
+}

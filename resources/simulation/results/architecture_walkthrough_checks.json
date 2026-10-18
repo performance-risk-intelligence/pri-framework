@@ -1,0 +1,25 @@
+{
+  "edition": "1.8",
+  "preserved_v1_4_files": 21,
+  "model_and_economics_unchanged": true,
+  "browser_checks": {
+    "steps": 15,
+    "playPause": "passed",
+    "automaticProgressAndCompletion": "passed",
+    "movingPackets": "passed",
+    "manualNavigation": "passed",
+    "holdCorrectionReview": "passed",
+    "missingEvidenceHold": "passed",
+    "missedDefectPath": "no invented hold",
+    "reducedMotion": "passed",
+    "hiddenTabPause": "passed",
+    "experimentData": "unchanged",
+    "responsiveWidths": [
+      1440,
+      768,
+      375,
+      320
+    ],
+    "pageErrors": []
+  }
+}

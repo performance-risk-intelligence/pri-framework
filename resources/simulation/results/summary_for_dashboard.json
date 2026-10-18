@@ -1,0 +1,414 @@
+{
+  "means": {
+    "control": {
+      "offered": 89988.66666666667,
+      "completed": 56430.25,
+      "failed": 33558.416666666664,
+      "failure_pct": 37.2916683886841,
+      "p95_ms": 148.03612256613076,
+      "all_outcome_p95_ms": 1719.9999999999136,
+      "cpu_s": 8645.321586962616,
+      "cpu_s_per_completion": 0.15320432106586582,
+      "retries": 33601.583333333336
+    },
+    "pri": {
+      "offered": 89988.66666666667,
+      "completed": 89988.66666666667,
+      "failed": 0,
+      "failure_pct": 0.0,
+      "p95_ms": 152.51049644108636,
+      "all_outcome_p95_ms": 152.51049644108636,
+      "cpu_s": 7654.659634630094,
+      "cpu_s_per_completion": 0.08506251685872093,
+      "retries": 0
+    }
+  },
+  "deltas": {
+    "failed": {
+      "mean": 33558.416666666664,
+      "min": 33288,
+      "max": 33889,
+      "mean_ci95": [
+        33447.808333333334,
+        33669.8375
+      ]
+    },
+    "retries": {
+      "mean": 33601.583333333336,
+      "min": 33325,
+      "max": 33940,
+      "mean_ci95": [
+        33490.32083333334,
+        33714.666666666664
+      ]
+    },
+    "cpu_s": {
+      "mean": 990.6619523325227,
+      "min": 971.893427702189,
+      "max": 1017.3920512935993,
+      "mean_ci95": [
+        982.9544494533085,
+        999.0796755687654
+      ]
+    },
+    "total_journey_s": {
+      "mean": 54699.63732926828,
+      "min": 54238.5275178685,
+      "max": 55249.84262734047,
+      "mean_ci95": [
+        54521.29419357164,
+        54882.27691975836
+      ]
+    },
+    "completed": {
+      "mean": 33558.416666666664,
+      "min": 33288,
+      "max": 33889,
+      "mean_ci95": [
+        33447.808333333334,
+        33669.8375
+      ]
+    },
+    "p95_ms": {
+      "mean": -4.4743738749556,
+      "min": -6.695101933752312,
+      "max": -2.1343497780158884,
+      "mean_ci95": [
+        -5.101594886322676,
+        -3.8147322726675674
+      ]
+    },
+    "all_outcome_p95_ms": {
+      "mean": 1567.4895035588272,
+      "min": 1565.7182119424178,
+      "max": 1569.3949152562482,
+      "mean_ci95": [
+        1566.9585819706836,
+        1568.0119163599093
+      ]
+    }
+  },
+  "economics": {
+    "assumptions": {
+      "events_per_service_year": 6,
+      "releases_per_service_year": 52,
+      "effect_transfer_fraction": 0.5,
+      "execution_value_per_vcpu_hour": 0.05,
+      "response_person_hours_control": 4,
+      "response_person_hours_pri": 1,
+      "loaded_labor_usd_hour": 100,
+      "setup_hours_per_service": 24,
+      "annual_maintenance_hours_per_service": 12,
+      "annual_noncompute_usd_per_service": 120
+    },
+    "response_credit_eligible": true,
+    "one_service": {
+      "annual_net_cpu_hours": -16.64177680098049,
+      "first_year_net_usd": -2820.832088840049,
+      "ongoing_annual_net_usd": -420.832088840049,
+      "ongoing_break_even_events": 8.805418591273533,
+      "first_year_break_even_events": 24.80468480125967
+    },
+    "scales": [
+      {
+        "label": "One service",
+        "distinct_services": 1,
+        "annual_failed_journeys_avoided": 100675.25,
+        "annual_retry_attempts_avoided": 100804.75,
+        "annual_journey_hours_recovered": 45.58303110772356,
+        "annual_net_cpu_hours": -16.64177680098049,
+        "annual_response_hours_avoided": 9.0,
+        "first_year_net_usd": -2820.832088840049,
+        "ongoing_annual_net_usd": -420.832088840049,
+        "fixed_fleet_cash_compute_savings_usd": 0
+      },
+      {
+        "label": "Organization portfolio",
+        "distinct_services": 25,
+        "annual_failed_journeys_avoided": 2516881.25,
+        "annual_retry_attempts_avoided": 2520118.75,
+        "annual_journey_hours_recovered": 1139.575777693089,
+        "annual_net_cpu_hours": -416.04442002451225,
+        "annual_response_hours_avoided": 225.0,
+        "first_year_net_usd": -70520.80222100123,
+        "ongoing_annual_net_usd": -10520.802221001224,
+        "fixed_fleet_cash_compute_savings_usd": 0
+      },
+      {
+        "label": "Cross-industry scenario",
+        "distinct_services": 1000,
+        "annual_failed_journeys_avoided": 100675250.0,
+        "annual_retry_attempts_avoided": 100804750.0,
+        "annual_journey_hours_recovered": 45583.03110772356,
+        "annual_net_cpu_hours": -16641.77680098049,
+        "annual_response_hours_avoided": 9000.0,
+        "first_year_net_usd": -2820832.0888400488,
+        "ongoing_annual_net_usd": -420832.088840049,
+        "fixed_fleet_cash_compute_savings_usd": 0
+      },
+      {
+        "label": "Nationwide adoption scenario",
+        "distinct_services": 10000,
+        "annual_failed_journeys_avoided": 1006752500.0,
+        "annual_retry_attempts_avoided": 1008047500.0,
+        "annual_journey_hours_recovered": 455830.3110772356,
+        "annual_net_cpu_hours": -166417.76800980492,
+        "annual_response_hours_avoided": 90000.0,
+        "first_year_net_usd": -28208320.88840049,
+        "ongoing_annual_net_usd": -4208320.888400489,
+        "fixed_fleet_cash_compute_savings_usd": 0
+      }
+    ],
+    "interpretation": "Conditional arithmetic for distinct comparable services. Not a forecast, national estimate, measured invoice saving or GDP impact. Response hours are assumptions. Fixed provisioned fleet has zero demonstrated bill reduction."
+  },
+  "sensitivity": [
+    {
+      "case": "Fast incident rollback",
+      "config_changes": {
+        "rollback_delay_s": 0
+      },
+      "replications": 4,
+      "failed_journeys_avoided": {
+        "mean": 33152.5,
+        "min": 32868,
+        "max": 33436,
+        "mean_ci95": [
+          32881.0,
+          33424.0
+        ]
+      },
+      "production_cpu_s_avoided": {
+        "mean": 989.8348814922858,
+        "min": 971.7296151007258,
+        "max": 1004.172698420366,
+        "mean_ci95": [
+          977.922110260854,
+          1000.3361470808022
+        ]
+      },
+      "net_cpu_s_including_preflight": {
+        "mean": -222.63224136376073,
+        "min": -231.57624822001185,
+        "max": -216.47118436276241,
+        "mean_ci95": [
+          -228.95412421590214,
+          -217.70183343924572
+        ]
+      },
+      "faulty_gate_states": [
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION"
+      ],
+      "bad_release_promoted": false
+    },
+    {
+      "case": "Fast rollback and retry budget",
+      "config_changes": {
+        "rollback_delay_s": 0,
+        "retry_budget_fraction": 0.1
+      },
+      "replications": 4,
+      "failed_journeys_avoided": {
+        "mean": 11378.5,
+        "min": 8261,
+        "max": 12504,
+        "mean_ci95": [
+          9307.75,
+          12476.0
+        ]
+      },
+      "production_cpu_s_avoided": {
+        "mean": 347.68691822854385,
+        "min": 258.5230942440312,
+        "max": 384.70566629090354,
+        "mean_ci95": [
+          288.6845936063271,
+          381.93737899205917
+        ]
+      },
+      "net_cpu_s_including_preflight": {
+        "mean": -857.634611380412,
+        "min": -952.3014268829099,
+        "max": -812.7344277853929,
+        "mean_ci95": [
+          -922.2756782279398,
+          -817.8768604866236
+        ]
+      },
+      "faulty_gate_states": [
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION"
+      ],
+      "bad_release_promoted": false
+    },
+    {
+      "case": "Lower demand",
+      "config_changes": {
+        "base_rps": 20,
+        "peak_rps": 35
+      },
+      "replications": 4,
+      "failed_journeys_avoided": {
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "mean_ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "production_cpu_s_avoided": {
+        "mean": 1419.5789298941984,
+        "min": 1413.6183492193572,
+        "max": 1428.362783643569,
+        "mean_ci95": [
+          1414.882845311328,
+          1425.3089230835014
+        ]
+      },
+      "net_cpu_s_including_preflight": {
+        "mean": 207.11180703815182,
+        "min": 195.7249728094232,
+        "max": 227.9465419398107,
+        "mean_ci95": [
+          197.56931286197488,
+          221.3782515507939
+        ]
+      },
+      "faulty_gate_states": [
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION"
+      ],
+      "bad_release_promoted": false
+    },
+    {
+      "case": "Slow incident rollback",
+      "config_changes": {
+        "rollback_delay_s": 600
+      },
+      "replications": 4,
+      "failed_journeys_avoided": {
+        "mean": 38261.75,
+        "min": 37984,
+        "max": 38514,
+        "mean_ci95": [
+          38077.0,
+          38435.0
+        ]
+      },
+      "production_cpu_s_avoided": {
+        "mean": 1542.3144378690215,
+        "min": 1524.8898785348883,
+        "max": 1563.3744011861318,
+        "mean_ci95": [
+          1526.7551997231426,
+          1557.8736760149004
+        ]
+      },
+      "net_cpu_s_including_preflight": {
+        "mean": 329.84731501297495,
+        "min": 306.37601360806343,
+        "max": 340.4197214479086,
+        "mean_ci95": [
+          314.31049784659575,
+          339.26683600505066
+        ]
+      },
+      "faulty_gate_states": [
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION",
+        "HOLD_REGRESSION"
+      ],
+      "bad_release_promoted": false
+    },
+    {
+      "case": "Unrepresentative preflight",
+      "config_changes": {
+        "preflight_bad_multiplier": 1
+      },
+      "replications": 4,
+      "failed_journeys_avoided": {
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "mean_ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "production_cpu_s_avoided": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean_ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "net_cpu_s_including_preflight": {
+        "mean": -1077.5192347671752,
+        "min": -1096.8218957927613,
+        "max": -1041.5096433372366,
+        "mean_ci95": [
+          -1093.9565772720534,
+          -1052.7284270601208
+        ]
+      },
+      "faulty_gate_states": [
+        "ELIGIBLE_FOR_REVIEW",
+        "ELIGIBLE_FOR_REVIEW",
+        "ELIGIBLE_FOR_REVIEW",
+        "ELIGIBLE_FOR_REVIEW"
+      ],
+      "bad_release_promoted": true
+    },
+    {
+      "case": "Missing preflight records",
+      "config_changes": {
+        "preflight_coverage": 0.7
+      },
+      "replications": 4,
+      "failed_journeys_avoided": {
+        "mean": 33539.5,
+        "min": 33288,
+        "max": 33784,
+        "mean_ci95": [
+          33329.5,
+          33749.5
+        ]
+      },
+      "production_cpu_s_avoided": {
+        "mean": 990.2448214829794,
+        "min": 972.2257412682948,
+        "max": 1004.3295315978803,
+        "mean_ci95": [
+          978.2353846979781,
+          1000.2969232924543
+        ]
+      },
+      "net_cpu_s_including_preflight": {
+        "mean": -222.22230137306713,
+        "min": -230.35416684811048,
+        "max": -215.97505819519347,
+        "mean_ci95": [
+          -227.99835489259755,
+          -217.38855900212155
+        ]
+      },
+      "faulty_gate_states": [
+        "HOLD_EVIDENCE",
+        "HOLD_EVIDENCE",
+        "HOLD_EVIDENCE",
+        "HOLD_EVIDENCE"
+      ],
+      "bad_release_promoted": false
+    }
+  ]
+}

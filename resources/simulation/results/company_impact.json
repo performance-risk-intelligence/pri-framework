@@ -1,0 +1,90 @@
+{
+  "classification": "Illustrative company budget and conditional consequence projection, not measured company savings",
+  "assumptions": {
+    "workflows": 10,
+    "first_year_active_fraction": 0.625,
+    "events_per_workflow_year": 2,
+    "transfer_fraction": 0.5,
+    "transaction_share": 0.2,
+    "unrecovered_fraction": 0.1,
+    "contribution_usd": 20.0,
+    "support_fraction": 0.01,
+    "support_minutes": 6.0,
+    "manual_fraction": 0.01,
+    "manual_minutes": 3.0,
+    "operations_usd_hour": 29.3,
+    "engineering_usd_hour": 91.0,
+    "shared_setup_hours": 80.0,
+    "integration_hours_per_workflow": 16.0,
+    "shared_maintenance_hours_year": 96.0,
+    "maintenance_hours_per_workflow_year": 2.0,
+    "routine_review_hours": 0.25,
+    "platform_usd_month": 600.0,
+    "security_usd_year": 3000.0,
+    "license_usd_year": 0.0
+  },
+  "first_year": {
+    "active_workflow_years": 6.25,
+    "credited_incident_equivalents": 6.25,
+    "avoided_failed_journeys": 209740.10416666666,
+    "retained_transactions": 4194.802083333334,
+    "support_contacts": 2097.4010416666665,
+    "manual_recovery_cases": 2097.4010416666665,
+    "support_hours": 209.74010416666667,
+    "manual_recovery_hours": 104.87005208333333,
+    "incident_response_hours": 18.75,
+    "benefits": {
+      "retained_contribution": 83896.04166666669,
+      "support_capacity": 6145.385052083334,
+      "manual_recovery_capacity": 3072.692526041667,
+      "incident_response_capacity": 1706.25,
+      "production_compute": 0.08599496113997593
+    },
+    "costs": {
+      "testing": 5.458540133726332,
+      "routine_review": 7393.75,
+      "maintenance": 10556.0,
+      "platform": 7200.0,
+      "security": 3000.0,
+      "license": 0.0,
+      "setup": 21840.0
+    },
+    "gross_benefit": 94820.45523975282,
+    "total_cost": 49995.208540133724,
+    "net_value": 44825.24669961909,
+    "benefit_cost_ratio": 1.8965908535742093,
+    "demonstrated_cash_saving_usd": 0
+  },
+  "steady_state": {
+    "active_workflow_years": 10,
+    "credited_incident_equivalents": 10.0,
+    "avoided_failed_journeys": 335584.1666666666,
+    "retained_transactions": 6711.683333333334,
+    "support_contacts": 3355.8416666666662,
+    "manual_recovery_cases": 3355.8416666666662,
+    "support_hours": 335.58416666666665,
+    "manual_recovery_hours": 167.79208333333332,
+    "incident_response_hours": 30.0,
+    "benefits": {
+      "retained_contribution": 134233.6666666667,
+      "support_capacity": 9832.616083333334,
+      "manual_recovery_capacity": 4916.308041666667,
+      "incident_response_capacity": 2730.0,
+      "production_compute": 0.13759193782396148
+    },
+    "costs": {
+      "testing": 8.73366421396213,
+      "routine_review": 11830.0,
+      "maintenance": 10556.0,
+      "platform": 7200.0,
+      "security": 3000.0,
+      "license": 0.0,
+      "setup": 0
+    },
+    "gross_benefit": 151712.7283836045,
+    "total_cost": 32594.733664213963,
+    "net_value": 119117.99471939052,
+    "benefit_cost_ratio": 4.654516583768598,
+    "demonstrated_cash_saving_usd": 0
+  }
+}

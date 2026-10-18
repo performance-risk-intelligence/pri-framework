@@ -1,0 +1,55 @@
+{
+  "classification": "Simulated records with fictional identities, not organizational acceptance",
+  "risk": {
+    "id": "PERF-DUPLICATED-WORK",
+    "owner": "fictional-service-owner",
+    "description": "Duplicated transformation creates queue and retry amplification"
+  },
+  "faulty_dispositions": [
+    "HOLD_REGRESSION",
+    "HOLD_REGRESSION",
+    "HOLD_REGRESSION",
+    "HOLD_REGRESSION",
+    "HOLD_REGRESSION",
+    "HOLD_REGRESSION",
+    "HOLD_REGRESSION",
+    "HOLD_REGRESSION",
+    "HOLD_REGRESSION",
+    "HOLD_REGRESSION",
+    "HOLD_REGRESSION",
+    "HOLD_REGRESSION"
+  ],
+  "corrected_dispositions": [
+    "ELIGIBLE_FOR_REVIEW",
+    "ELIGIBLE_FOR_REVIEW",
+    "ELIGIBLE_FOR_REVIEW",
+    "ELIGIBLE_FOR_REVIEW",
+    "ELIGIBLE_FOR_REVIEW",
+    "ELIGIBLE_FOR_REVIEW",
+    "ELIGIBLE_FOR_REVIEW",
+    "ELIGIBLE_FOR_REVIEW",
+    "ELIGIBLE_FOR_REVIEW",
+    "ELIGIBLE_FOR_REVIEW",
+    "ELIGIBLE_FOR_REVIEW",
+    "ELIGIBLE_FOR_REVIEW"
+  ],
+  "approval": {
+    "artifact_digest": "96613a7587ef1892d7d50422e77e1f8e2c5f0d4a03b9ed47a282a88f4527fbea",
+    "policy_version": "demo-policy-1",
+    "issued_s": 1200,
+    "expires_s": 1500,
+    "reviewer": "fictional-demo-release-owner",
+    "scope": "simulation-only"
+  },
+  "controls": {
+    "evidence_quality": "coverage and environment checks",
+    "release_gate": "per-run practical thresholds",
+    "promotion": "artifact and expiry checks",
+    "recurrence": "adverse fixture retained and rerun across seeds"
+  },
+  "correction": "Engineer removes duplicate work; identical correction availability in both arms",
+  "automatic_code_repair": false,
+  "production_identity_integration": false,
+  "real_world_control_effectiveness": "not established",
+  "exceptions": []
+}

@@ -1,0 +1,46 @@
+{
+  "edition": "1.5",
+  "classification": "Presentation-only local redesign over v1.4 calculations",
+  "preserved_artifacts_and_engines": 21,
+  "all_preservation_hashes_match": true,
+  "browser_checks": {
+    "tabsAndKeyboard": "passed",
+    "pairedBars": "passed",
+    "preservedFinanceScopes": {
+      "single": [
+        "$5,698",
+        "$7,882"
+      ],
+      "mixed": [
+        "$3,633",
+        "$39,963"
+      ],
+      "uniform": [
+        "$44,825",
+        "$119,118"
+      ],
+      "gpu": [
+        "\u2212$6,373",
+        "$907"
+      ]
+    },
+    "assumptionsSeparateFromEvidence": "passed",
+    "allCpuCases": 12,
+    "unknownEvidenceHold": "passed",
+    "fixedFleetNoBillReduction": "passed",
+    "blankInputs": "unavailable",
+    "financialVisualsAndJson": "synchronized",
+    "standaloneSvg": "passed",
+    "printSnapshot": "passed",
+    "oldDeepLinks": "passed",
+    "historyCounts": "preserved",
+    "responsiveWidths": [
+      1440,
+      768,
+      375,
+      320
+    ],
+    "reducedMotion": "passed",
+    "pageErrors": []
+  }
+}

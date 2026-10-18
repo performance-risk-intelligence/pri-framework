@@ -1,0 +1,14 @@
+{
+  "moderate_gate_and_zero_business_credit": "passed",
+  "mixed_group_accounting": "passed",
+  "distinct_seed_streams": "passed",
+  "shared_costs_not_duplicated": "passed",
+  "gpu_job_conservation": "passed",
+  "gpu_partial_batches": "passed",
+  "gpu_minimum_billing": "passed",
+  "startup_deadline_included": "passed",
+  "fixed_fleet_no_bill_reduction": "passed",
+  "held_gpu_candidate_no_saving": "passed",
+  "gpu_seed_reproducibility": "passed",
+  "all_saved_economics_reproduce": "passed"
+}

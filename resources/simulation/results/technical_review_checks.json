@@ -1,0 +1,21 @@
+{
+  "edition": "1.6",
+  "preserved_v1_4_artifacts": 21,
+  "all_model_hashes_unchanged": true,
+  "browser_checks": {
+    "tabs": 4,
+    "technicalDeepLink": "passed",
+    "dynamicCpuConfig": "passed",
+    "separateGpuConfig": "passed",
+    "keyboardWrapAndHomeEnd": "passed",
+    "methodsAndExport": "passed",
+    "preservedFinance": "passed",
+    "responsiveWidths": [
+      1440,
+      768,
+      375,
+      320
+    ],
+    "pageErrors": []
+  }
+}

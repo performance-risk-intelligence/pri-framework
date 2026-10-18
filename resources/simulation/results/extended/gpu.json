@@ -1,0 +1,1488 @@
+{
+  "classification": "Synthetic AI-style bulk batch cost experiment; no real GPU throughput, accuracy or invoice measurement",
+  "config": {
+    "seed": 20261018,
+    "replications": 8,
+    "jobs": 1000000,
+    "gpus": 32,
+    "current_batch_size": 4,
+    "candidate_batch_size": 8,
+    "job_weight_sigma": 0.25,
+    "batch_fixed_s": 0.2,
+    "batch_work_s": 2.0,
+    "batch_exponent": 0.8,
+    "deadline_s": 57600,
+    "startup_s": 120,
+    "shutdown_s": 60,
+    "preflight_jobs": 1000,
+    "maximum_batch": 8
+  },
+  "sources": [
+    {
+      "title": "NVIDIA Triton dynamic batching",
+      "url": "https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/user_guide/batcher.html",
+      "supports": "Batch aggregation and workload-specific profiling; no numerical speedup borrowed."
+    },
+    {
+      "title": "NVIDIA Triton tuning and measurement",
+      "url": "https://github.com/triton-inference-server/server/blob/main/docs/user_guide/optimization.md",
+      "supports": "Measure configurations; bigger batches are not a universal improvement."
+    },
+    {
+      "title": "AWS March 31, 2026 regional GPU case study",
+      "url": "https://aws.amazon.com/jp/blogs/news/case-study-dentsusoken-unveil/",
+      "supports": "Published March 2026 g5.xlarge US East N. Virginia on-demand reference $1.006/instance-hour; historical reference, not current quote."
+    },
+    {
+      "title": "AWS EC2 on-demand billing",
+      "url": "https://aws.amazon.com/ec2/pricing/on-demand/",
+      "supports": "Linux per-second billing with 60-second minimum. Idle allocated instances remain chargeable. Excludes storage/network, support, taxes, negotiated discounts."
+    },
+    {
+      "title": "AWS accelerated instance specifications",
+      "url": "https://docs.aws.amazon.com/ec2/latest/instancetypes/ac.html",
+      "supports": "g5.xlarge has one A10G GPU; price is per whole instance, not just GPU."
+    },
+    {
+      "title": "BLS labor proxy method",
+      "url": "https://www.bls.gov/news.release/archives/ocwage_04022025.pdf",
+      "supports": "Engineering wage reference; benefit loading in Business_Impact_Method.md."
+    }
+  ],
+  "replications": [
+    {
+      "seed": 20261018,
+      "control": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 250000,
+        "batch_size": 4,
+        "gpus": 32,
+        "gpu_busy_s": 1566273.6234195435,
+        "billed_instance_s": 1572049,
+        "elapsed_processing_s": 48948.926222240254,
+        "p95_completion_s": 46625.983831879654,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 71060
+          },
+          {
+            "hour": 2,
+            "completed": 144492
+          },
+          {
+            "hour": 3,
+            "completed": 218028
+          },
+          {
+            "hour": 4,
+            "completed": 291632
+          },
+          {
+            "hour": 5,
+            "completed": 365152
+          },
+          {
+            "hour": 6,
+            "completed": 438764
+          },
+          {
+            "hour": 7,
+            "completed": 512236
+          },
+          {
+            "hour": 8,
+            "completed": 585740
+          },
+          {
+            "hour": 9,
+            "completed": 659268
+          },
+          {
+            "hour": 10,
+            "completed": 732892
+          },
+          {
+            "hour": 11,
+            "completed": 806480
+          },
+          {
+            "hour": 12,
+            "completed": 880012
+          },
+          {
+            "hour": 13,
+            "completed": 953572
+          },
+          {
+            "hour": 14,
+            "completed": 1000000
+          }
+        ]
+      },
+      "pri": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 125000,
+        "batch_size": 8,
+        "gpus": 32,
+        "gpu_busy_s": 1344992.8569789378,
+        "billed_instance_s": 1350769,
+        "elapsed_processing_s": 42035.62740233327,
+        "p95_completion_s": 40059.11165693541,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 82704
+          },
+          {
+            "hour": 2,
+            "completed": 168272
+          },
+          {
+            "hour": 3,
+            "completed": 253896
+          },
+          {
+            "hour": 4,
+            "completed": 339552
+          },
+          {
+            "hour": 5,
+            "completed": 425272
+          },
+          {
+            "hour": 6,
+            "completed": 510792
+          },
+          {
+            "hour": 7,
+            "completed": 596368
+          },
+          {
+            "hour": 8,
+            "completed": 682104
+          },
+          {
+            "hour": 9,
+            "completed": 767792
+          },
+          {
+            "hour": 10,
+            "completed": 853456
+          },
+          {
+            "hour": 11,
+            "completed": 939104
+          },
+          {
+            "hour": 12,
+            "completed": 1000000
+          }
+        ]
+      },
+      "assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "reason": "Cost and deadline eligibility within synthetic fixture; real model accuracy and memory require validation",
+        "gpu_work_reduction_fraction": 0.14142784099602024
+      },
+      "approval": {
+        "artifact_digest": "1cedc155de948aa1c6b8b23858c06604e7b678e0fe10d096df76ef69d3b684ae",
+        "policy_version": "demo-policy-1",
+        "issued_s": 0,
+        "expires_s": 300,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "candidate_admitted": true,
+      "gpu_busy_s_saved": 221280.76644060574,
+      "billed_instance_s_saved": 221280,
+      "preflight_billed_instance_s": 4743,
+      "preflight_gpu_busy_s": 4202.727396065219
+    },
+    {
+      "seed": 20261019,
+      "control": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 250000,
+        "batch_size": 4,
+        "gpus": 32,
+        "gpu_busy_s": 1565215.0903184887,
+        "billed_instance_s": 1570989,
+        "elapsed_processing_s": 48916.90623451241,
+        "p95_completion_s": 46587.35903136674,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 71132
+          },
+          {
+            "hour": 2,
+            "completed": 144772
+          },
+          {
+            "hour": 3,
+            "completed": 218436
+          },
+          {
+            "hour": 4,
+            "completed": 291948
+          },
+          {
+            "hour": 5,
+            "completed": 365500
+          },
+          {
+            "hour": 6,
+            "completed": 439084
+          },
+          {
+            "hour": 7,
+            "completed": 512660
+          },
+          {
+            "hour": 8,
+            "completed": 586196
+          },
+          {
+            "hour": 9,
+            "completed": 659944
+          },
+          {
+            "hour": 10,
+            "completed": 733552
+          },
+          {
+            "hour": 11,
+            "completed": 807164
+          },
+          {
+            "hour": 12,
+            "completed": 880720
+          },
+          {
+            "hour": 13,
+            "completed": 954336
+          },
+          {
+            "hour": 14,
+            "completed": 1000000
+          }
+        ]
+      },
+      "pri": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 125000,
+        "batch_size": 8,
+        "gpus": 32,
+        "gpu_busy_s": 1344071.350391556,
+        "billed_instance_s": 1349845,
+        "elapsed_processing_s": 42008.989766902494,
+        "p95_completion_s": 40024.63939337308,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 82760
+          },
+          {
+            "hour": 2,
+            "completed": 168544
+          },
+          {
+            "hour": 3,
+            "completed": 254296
+          },
+          {
+            "hour": 4,
+            "completed": 339904
+          },
+          {
+            "hour": 5,
+            "completed": 425584
+          },
+          {
+            "hour": 6,
+            "completed": 511240
+          },
+          {
+            "hour": 7,
+            "completed": 596904
+          },
+          {
+            "hour": 8,
+            "completed": 682736
+          },
+          {
+            "hour": 9,
+            "completed": 768464
+          },
+          {
+            "hour": 10,
+            "completed": 854168
+          },
+          {
+            "hour": 11,
+            "completed": 939896
+          },
+          {
+            "hour": 12,
+            "completed": 1000000
+          }
+        ]
+      },
+      "assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "reason": "Cost and deadline eligibility within synthetic fixture; real model accuracy and memory require validation",
+        "gpu_work_reduction_fraction": 0.14125508011463128
+      },
+      "approval": {
+        "artifact_digest": "1cedc155de948aa1c6b8b23858c06604e7b678e0fe10d096df76ef69d3b684ae",
+        "policy_version": "demo-policy-1",
+        "issued_s": 0,
+        "expires_s": 300,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "candidate_admitted": true,
+      "gpu_busy_s_saved": 221143.7399269326,
+      "billed_instance_s_saved": 221144,
+      "preflight_billed_instance_s": 4806,
+      "preflight_gpu_busy_s": 4264.771329452353
+    },
+    {
+      "seed": 20261020,
+      "control": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 250000,
+        "batch_size": 4,
+        "gpus": 32,
+        "gpu_busy_s": 1566383.0872512213,
+        "billed_instance_s": 1572160,
+        "elapsed_processing_s": 48952.4064815175,
+        "p95_completion_s": 46624.86223364252,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 70968
+          },
+          {
+            "hour": 2,
+            "completed": 144528
+          },
+          {
+            "hour": 3,
+            "completed": 218148
+          },
+          {
+            "hour": 4,
+            "completed": 291624
+          },
+          {
+            "hour": 5,
+            "completed": 365200
+          },
+          {
+            "hour": 6,
+            "completed": 438664
+          },
+          {
+            "hour": 7,
+            "completed": 512200
+          },
+          {
+            "hour": 8,
+            "completed": 585752
+          },
+          {
+            "hour": 9,
+            "completed": 659108
+          },
+          {
+            "hour": 10,
+            "completed": 732752
+          },
+          {
+            "hour": 11,
+            "completed": 806348
+          },
+          {
+            "hour": 12,
+            "completed": 879992
+          },
+          {
+            "hour": 13,
+            "completed": 953592
+          },
+          {
+            "hour": 14,
+            "completed": 1000000
+          }
+        ]
+      },
+      "pri": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 125000,
+        "batch_size": 8,
+        "gpus": 32,
+        "gpu_busy_s": 1345088.1507792976,
+        "billed_instance_s": 1350863,
+        "elapsed_processing_s": 42040.545230484146,
+        "p95_completion_s": 40057.691059445926,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 82592
+          },
+          {
+            "hour": 2,
+            "completed": 168336
+          },
+          {
+            "hour": 3,
+            "completed": 253984
+          },
+          {
+            "hour": 4,
+            "completed": 339616
+          },
+          {
+            "hour": 5,
+            "completed": 425136
+          },
+          {
+            "hour": 6,
+            "completed": 510800
+          },
+          {
+            "hour": 7,
+            "completed": 596400
+          },
+          {
+            "hour": 8,
+            "completed": 681920
+          },
+          {
+            "hour": 9,
+            "completed": 767616
+          },
+          {
+            "hour": 10,
+            "completed": 853432
+          },
+          {
+            "hour": 11,
+            "completed": 939128
+          },
+          {
+            "hour": 12,
+            "completed": 1000000
+          }
+        ]
+      },
+      "assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "reason": "Cost and deadline eligibility within synthetic fixture; real model accuracy and memory require validation",
+        "gpu_work_reduction_fraction": 0.1411982098607384
+      },
+      "approval": {
+        "artifact_digest": "1cedc155de948aa1c6b8b23858c06604e7b678e0fe10d096df76ef69d3b684ae",
+        "policy_version": "demo-policy-1",
+        "issued_s": 0,
+        "expires_s": 300,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "candidate_admitted": true,
+      "gpu_busy_s_saved": 221294.93647192372,
+      "billed_instance_s_saved": 221297,
+      "preflight_billed_instance_s": 4827,
+      "preflight_gpu_busy_s": 4285.594436298948
+    },
+    {
+      "seed": 20261021,
+      "control": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 250000,
+        "batch_size": 4,
+        "gpus": 32,
+        "gpu_busy_s": 1565955.4422623713,
+        "billed_instance_s": 1571730,
+        "elapsed_processing_s": 48940.10278099155,
+        "p95_completion_s": 46611.555131063906,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 71088
+          },
+          {
+            "hour": 2,
+            "completed": 144528
+          },
+          {
+            "hour": 3,
+            "completed": 218072
+          },
+          {
+            "hour": 4,
+            "completed": 291556
+          },
+          {
+            "hour": 5,
+            "completed": 365208
+          },
+          {
+            "hour": 6,
+            "completed": 438824
+          },
+          {
+            "hour": 7,
+            "completed": 512344
+          },
+          {
+            "hour": 8,
+            "completed": 585892
+          },
+          {
+            "hour": 9,
+            "completed": 659432
+          },
+          {
+            "hour": 10,
+            "completed": 733032
+          },
+          {
+            "hour": 11,
+            "completed": 806536
+          },
+          {
+            "hour": 12,
+            "completed": 880192
+          },
+          {
+            "hour": 13,
+            "completed": 953868
+          },
+          {
+            "hour": 14,
+            "completed": 1000000
+          }
+        ]
+      },
+      "pri": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 125000,
+        "batch_size": 8,
+        "gpus": 32,
+        "gpu_busy_s": 1344715.8641933282,
+        "billed_instance_s": 1350490,
+        "elapsed_processing_s": 42028.38241075811,
+        "p95_completion_s": 40046.25192558718,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 82728
+          },
+          {
+            "hour": 2,
+            "completed": 168280
+          },
+          {
+            "hour": 3,
+            "completed": 253888
+          },
+          {
+            "hour": 4,
+            "completed": 339608
+          },
+          {
+            "hour": 5,
+            "completed": 425288
+          },
+          {
+            "hour": 6,
+            "completed": 510920
+          },
+          {
+            "hour": 7,
+            "completed": 596560
+          },
+          {
+            "hour": 8,
+            "completed": 682240
+          },
+          {
+            "hour": 9,
+            "completed": 767848
+          },
+          {
+            "hour": 10,
+            "completed": 853576
+          },
+          {
+            "hour": 11,
+            "completed": 939336
+          },
+          {
+            "hour": 12,
+            "completed": 1000000
+          }
+        ]
+      },
+      "assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "reason": "Cost and deadline eligibility within synthetic fixture; real model accuracy and memory require validation",
+        "gpu_work_reduction_fraction": 0.14116564159140055
+      },
+      "approval": {
+        "artifact_digest": "1cedc155de948aa1c6b8b23858c06604e7b678e0fe10d096df76ef69d3b684ae",
+        "policy_version": "demo-policy-1",
+        "issued_s": 0,
+        "expires_s": 300,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "candidate_admitted": true,
+      "gpu_busy_s_saved": 221239.5780690431,
+      "billed_instance_s_saved": 221240,
+      "preflight_billed_instance_s": 4840,
+      "preflight_gpu_busy_s": 4297.610376126141
+    },
+    {
+      "seed": 20261022,
+      "control": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 250000,
+        "batch_size": 4,
+        "gpus": 32,
+        "gpu_busy_s": 1565550.9460730487,
+        "billed_instance_s": 1571325,
+        "elapsed_processing_s": 48927.31449562133,
+        "p95_completion_s": 46602.53066103114,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 70984
+          },
+          {
+            "hour": 2,
+            "completed": 144492
+          },
+          {
+            "hour": 3,
+            "completed": 218204
+          },
+          {
+            "hour": 4,
+            "completed": 291848
+          },
+          {
+            "hour": 5,
+            "completed": 365396
+          },
+          {
+            "hour": 6,
+            "completed": 438996
+          },
+          {
+            "hour": 7,
+            "completed": 512604
+          },
+          {
+            "hour": 8,
+            "completed": 586180
+          },
+          {
+            "hour": 9,
+            "completed": 659784
+          },
+          {
+            "hour": 10,
+            "completed": 733380
+          },
+          {
+            "hour": 11,
+            "completed": 806900
+          },
+          {
+            "hour": 12,
+            "completed": 880460
+          },
+          {
+            "hour": 13,
+            "completed": 954048
+          },
+          {
+            "hour": 14,
+            "completed": 1000000
+          }
+        ]
+      },
+      "pri": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 125000,
+        "batch_size": 8,
+        "gpus": 32,
+        "gpu_busy_s": 1344363.7298078549,
+        "billed_instance_s": 1350137,
+        "elapsed_processing_s": 42016.537237171004,
+        "p95_completion_s": 40038.10673513431,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 82560
+          },
+          {
+            "hour": 2,
+            "completed": 168328
+          },
+          {
+            "hour": 3,
+            "completed": 254000
+          },
+          {
+            "hour": 4,
+            "completed": 339832
+          },
+          {
+            "hour": 5,
+            "completed": 425472
+          },
+          {
+            "hour": 6,
+            "completed": 511200
+          },
+          {
+            "hour": 7,
+            "completed": 596920
+          },
+          {
+            "hour": 8,
+            "completed": 682608
+          },
+          {
+            "hour": 9,
+            "completed": 768248
+          },
+          {
+            "hour": 10,
+            "completed": 853912
+          },
+          {
+            "hour": 11,
+            "completed": 939584
+          },
+          {
+            "hour": 12,
+            "completed": 1000000
+          }
+        ]
+      },
+      "assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "reason": "Cost and deadline eligibility within synthetic fixture; real model accuracy and memory require validation",
+        "gpu_work_reduction_fraction": 0.14125732857677842
+      },
+      "approval": {
+        "artifact_digest": "1cedc155de948aa1c6b8b23858c06604e7b678e0fe10d096df76ef69d3b684ae",
+        "policy_version": "demo-policy-1",
+        "issued_s": 0,
+        "expires_s": 300,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "candidate_admitted": true,
+      "gpu_busy_s_saved": 221187.21626519389,
+      "billed_instance_s_saved": 221188,
+      "preflight_billed_instance_s": 4806,
+      "preflight_gpu_busy_s": 4263.9521744414305
+    },
+    {
+      "seed": 20261023,
+      "control": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 250000,
+        "batch_size": 4,
+        "gpus": 32,
+        "gpu_busy_s": 1565933.8574205514,
+        "billed_instance_s": 1571711,
+        "elapsed_processing_s": 48939.441551347154,
+        "p95_completion_s": 46608.72375896545,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 71108
+          },
+          {
+            "hour": 2,
+            "completed": 144564
+          },
+          {
+            "hour": 3,
+            "completed": 218096
+          },
+          {
+            "hour": 4,
+            "completed": 291640
+          },
+          {
+            "hour": 5,
+            "completed": 365132
+          },
+          {
+            "hour": 6,
+            "completed": 438788
+          },
+          {
+            "hour": 7,
+            "completed": 512340
+          },
+          {
+            "hour": 8,
+            "completed": 585964
+          },
+          {
+            "hour": 9,
+            "completed": 659536
+          },
+          {
+            "hour": 10,
+            "completed": 733032
+          },
+          {
+            "hour": 11,
+            "completed": 806684
+          },
+          {
+            "hour": 12,
+            "completed": 880288
+          },
+          {
+            "hour": 13,
+            "completed": 953916
+          },
+          {
+            "hour": 14,
+            "completed": 1000000
+          }
+        ]
+      },
+      "pri": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 125000,
+        "batch_size": 8,
+        "gpus": 32,
+        "gpu_busy_s": 1344697.0734970986,
+        "billed_instance_s": 1350473,
+        "elapsed_processing_s": 42028.74739039568,
+        "p95_completion_s": 40042.68896749679,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 82728
+          },
+          {
+            "hour": 2,
+            "completed": 168272
+          },
+          {
+            "hour": 3,
+            "completed": 253880
+          },
+          {
+            "hour": 4,
+            "completed": 339552
+          },
+          {
+            "hour": 5,
+            "completed": 425240
+          },
+          {
+            "hour": 6,
+            "completed": 510904
+          },
+          {
+            "hour": 7,
+            "completed": 596648
+          },
+          {
+            "hour": 8,
+            "completed": 682304
+          },
+          {
+            "hour": 9,
+            "completed": 767968
+          },
+          {
+            "hour": 10,
+            "completed": 853664
+          },
+          {
+            "hour": 11,
+            "completed": 939408
+          },
+          {
+            "hour": 12,
+            "completed": 1000000
+          }
+        ]
+      },
+      "assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "reason": "Cost and deadline eligibility within synthetic fixture; real model accuracy and memory require validation",
+        "gpu_work_reduction_fraction": 0.14128049032014645
+      },
+      "approval": {
+        "artifact_digest": "1cedc155de948aa1c6b8b23858c06604e7b678e0fe10d096df76ef69d3b684ae",
+        "policy_version": "demo-policy-1",
+        "issued_s": 0,
+        "expires_s": 300,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "candidate_admitted": true,
+      "gpu_busy_s_saved": 221236.78392345272,
+      "billed_instance_s_saved": 221238,
+      "preflight_billed_instance_s": 4797,
+      "preflight_gpu_busy_s": 4255.532059975569
+    },
+    {
+      "seed": 20261024,
+      "control": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 250000,
+        "batch_size": 4,
+        "gpus": 32,
+        "gpu_busy_s": 1565612.353886236,
+        "billed_instance_s": 1571389,
+        "elapsed_processing_s": 48928.80051524132,
+        "p95_completion_s": 46599.62091486009,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 71084
+          },
+          {
+            "hour": 2,
+            "completed": 144628
+          },
+          {
+            "hour": 3,
+            "completed": 218272
+          },
+          {
+            "hour": 4,
+            "completed": 291852
+          },
+          {
+            "hour": 5,
+            "completed": 365404
+          },
+          {
+            "hour": 6,
+            "completed": 439016
+          },
+          {
+            "hour": 7,
+            "completed": 512612
+          },
+          {
+            "hour": 8,
+            "completed": 586148
+          },
+          {
+            "hour": 9,
+            "completed": 659680
+          },
+          {
+            "hour": 10,
+            "completed": 733336
+          },
+          {
+            "hour": 11,
+            "completed": 806880
+          },
+          {
+            "hour": 12,
+            "completed": 880456
+          },
+          {
+            "hour": 13,
+            "completed": 954088
+          },
+          {
+            "hour": 14,
+            "completed": 1000000
+          }
+        ]
+      },
+      "pri": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 125000,
+        "batch_size": 8,
+        "gpus": 32,
+        "gpu_busy_s": 1344417.1884142454,
+        "billed_instance_s": 1350196,
+        "elapsed_processing_s": 42018.17182631991,
+        "p95_completion_s": 40036.119983986566,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 82696
+          },
+          {
+            "hour": 2,
+            "completed": 168400
+          },
+          {
+            "hour": 3,
+            "completed": 254128
+          },
+          {
+            "hour": 4,
+            "completed": 339816
+          },
+          {
+            "hour": 5,
+            "completed": 425416
+          },
+          {
+            "hour": 6,
+            "completed": 511184
+          },
+          {
+            "hour": 7,
+            "completed": 596768
+          },
+          {
+            "hour": 8,
+            "completed": 682504
+          },
+          {
+            "hour": 9,
+            "completed": 768296
+          },
+          {
+            "hour": 10,
+            "completed": 853824
+          },
+          {
+            "hour": 11,
+            "completed": 939592
+          },
+          {
+            "hour": 12,
+            "completed": 1000000
+          }
+        ]
+      },
+      "assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "reason": "Cost and deadline eligibility within synthetic fixture; real model accuracy and memory require validation",
+        "gpu_work_reduction_fraction": 0.14135113788727094
+      },
+      "approval": {
+        "artifact_digest": "1cedc155de948aa1c6b8b23858c06604e7b678e0fe10d096df76ef69d3b684ae",
+        "policy_version": "demo-policy-1",
+        "issued_s": 0,
+        "expires_s": 300,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "candidate_admitted": true,
+      "gpu_busy_s_saved": 221195.1654719906,
+      "billed_instance_s_saved": 221193,
+      "preflight_billed_instance_s": 4771,
+      "preflight_gpu_busy_s": 4230.0515986729915
+    },
+    {
+      "seed": 20261025,
+      "control": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 250000,
+        "batch_size": 4,
+        "gpus": 32,
+        "gpu_busy_s": 1565570.3457320717,
+        "billed_instance_s": 1571347,
+        "elapsed_processing_s": 48927.42724346565,
+        "p95_completion_s": 46602.444853296816,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 71056
+          },
+          {
+            "hour": 2,
+            "completed": 144520
+          },
+          {
+            "hour": 3,
+            "completed": 218060
+          },
+          {
+            "hour": 4,
+            "completed": 291596
+          },
+          {
+            "hour": 5,
+            "completed": 365368
+          },
+          {
+            "hour": 6,
+            "completed": 438888
+          },
+          {
+            "hour": 7,
+            "completed": 512480
+          },
+          {
+            "hour": 8,
+            "completed": 586128
+          },
+          {
+            "hour": 9,
+            "completed": 659776
+          },
+          {
+            "hour": 10,
+            "completed": 733384
+          },
+          {
+            "hour": 11,
+            "completed": 806980
+          },
+          {
+            "hour": 12,
+            "completed": 880476
+          },
+          {
+            "hour": 13,
+            "completed": 954040
+          },
+          {
+            "hour": 14,
+            "completed": 1000000
+          }
+        ]
+      },
+      "pri": {
+        "jobs": 1000000,
+        "completed": 1000000,
+        "late_jobs": 0,
+        "retries": 0,
+        "batches": 125000,
+        "batch_size": 8,
+        "gpus": 32,
+        "gpu_busy_s": 1344380.618191968,
+        "billed_instance_s": 1350156,
+        "elapsed_processing_s": 42016.72888532372,
+        "p95_completion_s": 40037.60165413232,
+        "conservation_checksum": 499999500000,
+        "hourly_completions": [
+          {
+            "hour": 1,
+            "completed": 82664
+          },
+          {
+            "hour": 2,
+            "completed": 168256
+          },
+          {
+            "hour": 3,
+            "completed": 253888
+          },
+          {
+            "hour": 4,
+            "completed": 339680
+          },
+          {
+            "hour": 5,
+            "completed": 425344
+          },
+          {
+            "hour": 6,
+            "completed": 511072
+          },
+          {
+            "hour": 7,
+            "completed": 596832
+          },
+          {
+            "hour": 8,
+            "completed": 682584
+          },
+          {
+            "hour": 9,
+            "completed": 768328
+          },
+          {
+            "hour": 10,
+            "completed": 853936
+          },
+          {
+            "hour": 11,
+            "completed": 939584
+          },
+          {
+            "hour": 12,
+            "completed": 1000000
+          }
+        ]
+      },
+      "assessment": {
+        "disposition": "ELIGIBLE_FOR_REVIEW",
+        "reason": "Cost and deadline eligibility within synthetic fixture; real model accuracy and memory require validation",
+        "gpu_work_reduction_fraction": 0.1411949724488878
+      },
+      "approval": {
+        "artifact_digest": "1cedc155de948aa1c6b8b23858c06604e7b678e0fe10d096df76ef69d3b684ae",
+        "policy_version": "demo-policy-1",
+        "issued_s": 0,
+        "expires_s": 300,
+        "reviewer": "fictional-demo-release-owner",
+        "scope": "simulation-only"
+      },
+      "candidate_admitted": true,
+      "gpu_busy_s_saved": 221189.72754010372,
+      "billed_instance_s_saved": 221191,
+      "preflight_billed_instance_s": 4828,
+      "preflight_gpu_busy_s": 4286.78588443679
+    }
+  ],
+  "summary": {
+    "gpu_busy_s_saved": {
+      "mean": 221220.98926365576,
+      "min": 221143.7399269326,
+      "max": 221294.93647192372,
+      "mean_ci95": [
+        221188.91940828477,
+        221256.05337428048
+      ]
+    },
+    "billed_instance_s_saved": {
+      "mean": 221221.375,
+      "min": 221144,
+      "max": 221297,
+      "mean_ci95": [
+        221189.625,
+        221256.3875
+      ]
+    },
+    "preflight_billed_instance_s": {
+      "mean": 4802.25,
+      "min": 4743,
+      "max": 4840,
+      "mean_ci95": [
+        4780.375,
+        4821.628125
+      ]
+    }
+  },
+  "economics": {
+    "stop_after_job": {
+      "billing_mode": "stop_after_job",
+      "assumptions": {
+        "instance_usd_hour": 1.006,
+        "runs_year": 250,
+        "benefit_transfer": 0.5,
+        "validations_year": 52,
+        "setup_hours": 80,
+        "maintenance_hours_year": 48,
+        "review_hours_per_validation": 0.25,
+        "engineering_usd_hour": 91,
+        "incremental_platform_usd_year": 1200,
+        "license_usd_year": 0
+      },
+      "gross_annual_compute_reduction_usd": 7727.385529513888,
+      "costs": {
+        "test_execution": 69.78202833333334,
+        "routine_review": 1183.0,
+        "maintenance": 4368,
+        "incremental_platform": 1200,
+        "license": 0,
+        "setup": 7280
+      },
+      "first_year_net_usd": -6373.396498819445,
+      "ongoing_annual_net_usd": 906.6035011805552,
+      "annual_gpu_busy_hours_released": 7681.284349432492,
+      "annual_test_billed_instance_hours": 69.36583333333334,
+      "demonstrated_cash_saving_usd": 0
+    },
+    "fixed_fleet": {
+      "billing_mode": "fixed_fleet",
+      "assumptions": {
+        "instance_usd_hour": 1.006,
+        "runs_year": 250,
+        "benefit_transfer": 0.5,
+        "validations_year": 52,
+        "setup_hours": 80,
+        "maintenance_hours_year": 48,
+        "review_hours_per_validation": 0.25,
+        "engineering_usd_hour": 91,
+        "incremental_platform_usd_year": 1200,
+        "license_usd_year": 0
+      },
+      "gross_annual_compute_reduction_usd": 0,
+      "costs": {
+        "test_execution": 69.78202833333334,
+        "routine_review": 1183.0,
+        "maintenance": 4368,
+        "incremental_platform": 1200,
+        "license": 0,
+        "setup": 7280
+      },
+      "first_year_net_usd": -14100.782028333333,
+      "ongoing_annual_net_usd": -6820.782028333333,
+      "annual_gpu_busy_hours_released": 7681.284349432492,
+      "annual_test_billed_instance_hours": 69.36583333333334,
+      "demonstrated_cash_saving_usd": 0
+    }
+  },
+  "transfer_sensitivity": [
+    {
+      "billing_mode": "stop_after_job",
+      "assumptions": {
+        "instance_usd_hour": 1.006,
+        "runs_year": 250,
+        "benefit_transfer": 0.25,
+        "validations_year": 52,
+        "setup_hours": 80,
+        "maintenance_hours_year": 48,
+        "review_hours_per_validation": 0.25,
+        "engineering_usd_hour": 91,
+        "incremental_platform_usd_year": 1200,
+        "license_usd_year": 0
+      },
+      "gross_annual_compute_reduction_usd": 3863.692764756944,
+      "costs": {
+        "test_execution": 69.78202833333334,
+        "routine_review": 1183.0,
+        "maintenance": 4368,
+        "incremental_platform": 1200,
+        "license": 0,
+        "setup": 7280
+      },
+      "first_year_net_usd": -10237.089263576388,
+      "ongoing_annual_net_usd": -2957.089263576389,
+      "annual_gpu_busy_hours_released": 3840.642174716246,
+      "annual_test_billed_instance_hours": 69.36583333333334,
+      "demonstrated_cash_saving_usd": 0
+    },
+    {
+      "billing_mode": "stop_after_job",
+      "assumptions": {
+        "instance_usd_hour": 1.006,
+        "runs_year": 250,
+        "benefit_transfer": 0.5,
+        "validations_year": 52,
+        "setup_hours": 80,
+        "maintenance_hours_year": 48,
+        "review_hours_per_validation": 0.25,
+        "engineering_usd_hour": 91,
+        "incremental_platform_usd_year": 1200,
+        "license_usd_year": 0
+      },
+      "gross_annual_compute_reduction_usd": 7727.385529513888,
+      "costs": {
+        "test_execution": 69.78202833333334,
+        "routine_review": 1183.0,
+        "maintenance": 4368,
+        "incremental_platform": 1200,
+        "license": 0,
+        "setup": 7280
+      },
+      "first_year_net_usd": -6373.396498819445,
+      "ongoing_annual_net_usd": 906.6035011805552,
+      "annual_gpu_busy_hours_released": 7681.284349432492,
+      "annual_test_billed_instance_hours": 69.36583333333334,
+      "demonstrated_cash_saving_usd": 0
+    },
+    {
+      "billing_mode": "stop_after_job",
+      "assumptions": {
+        "instance_usd_hour": 1.006,
+        "runs_year": 250,
+        "benefit_transfer": 1.0,
+        "validations_year": 52,
+        "setup_hours": 80,
+        "maintenance_hours_year": 48,
+        "review_hours_per_validation": 0.25,
+        "engineering_usd_hour": 91,
+        "incremental_platform_usd_year": 1200,
+        "license_usd_year": 0
+      },
+      "gross_annual_compute_reduction_usd": 15454.771059027777,
+      "costs": {
+        "test_execution": 69.78202833333334,
+        "routine_review": 1183.0,
+        "maintenance": 4368,
+        "incremental_platform": 1200,
+        "license": 0,
+        "setup": 7280
+      },
+      "first_year_net_usd": 1353.9890306944435,
+      "ongoing_annual_net_usd": 8633.989030694443,
+      "annual_gpu_busy_hours_released": 15362.568698864983,
+      "annual_test_billed_instance_hours": 69.36583333333334,
+      "demonstrated_cash_saving_usd": 0
+    }
+  ]
+}

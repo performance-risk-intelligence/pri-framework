@@ -1,6 +1,6 @@
 # PRI public framework hub
 
-A dependency-free, static HTML/CSS/JavaScript website for Performance Risk Intelligence. Public edition v0.5.0, prepared October 18, 2026. Repository publication and website deployment are separate steps; verify the Pages workflow before sharing a public website URL.
+A dependency-free, static HTML/CSS/JavaScript website for Performance Risk Intelligence. Public edition v0.6.0, prepared October 18, 2026. Repository publication and website deployment are separate steps; verify the Pages workflow before sharing a public website URL.
 
 ## Contents
 
@@ -9,6 +9,7 @@ A dependency-free, static HTML/CSS/JavaScript website for Performance Risk Intel
 - `assets/`: local styles, client-side interactions, and SVG favicon. No external fonts, tracking, forms, APIs, or analytics.
 - `resources/`: public Markdown resources and changelog.
 - `resources/whitepaper/`: Version 1.2 paper in HTML, PDF, DOCX and Markdown, figures, and the reproducible generated-data study. The system design is proposed; operational components require implementation.
+- `resources/simulation/`: interactive edition 1.8, reproducible CPU/GPU experiments, mixed portfolio, conditional financial models and architecture walkthrough. All data is generated; no customer outcome or realized savings is demonstrated.
 - `.github/workflows/pages.yml`: GitHub Pages deployment workflow staging only the public site files.
 
 The site is buildless. No package installation or external build script is needed.

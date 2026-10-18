@@ -1,0 +1,9 @@
+{
+  "accounting": "passed",
+  "zero_exposure": "passed",
+  "missed_defect_no_business_credit": "passed",
+  "disjoint_recovery": "passed",
+  "invalid_inputs": "passed",
+  "operational_results_unchanged": "all seven cases match archived edition 1.1",
+  "parity_fixtures": 5
+}

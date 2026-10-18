@@ -1,5 +1,14 @@
 # PRI public hub changelog
 
+## v0.6.0 — October 18, 2026
+
+- Added the four-tab interactive simulation, architecture release walkthrough and reproducible source/results package.
+- Added a moderate CPU regression, independently configured mixed portfolio and a finite AI/GPU batch model with fixed-fleet versus stop-after-job billing.
+- Separated synthetic evidence, editable economic assumptions and conditional financial results; retained negative and missed-defect cases.
+- Added homepage navigation and resource links while preserving the Version 1.2 white paper and older synthetic study.
+- Published only simulation/public website assets; excluded private source records and local QA exports.
+
+
 ## v0.5.0 — October 18, 2026
 
 - Added a Version 1.2 public edition of the technical and business white paper in HTML, Word, PDF and Markdown.

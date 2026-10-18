@@ -1,0 +1,21 @@
+{
+  "edition": "1.7",
+  "preserved_v1_4_files": 21,
+  "model_and_calculations_unchanged": true,
+  "browser_checks": {
+    "components": 12,
+    "deepLink": "passed",
+    "clickAndKeyboard": "passed",
+    "selectedGateContext": "passed",
+    "historySeparation": "passed",
+    "svgDownload": "passed",
+    "mobileAlternativeList": "passed",
+    "responsiveWidths": [
+      1440,
+      768,
+      375,
+      320
+    ],
+    "pageErrors": []
+  }
+}

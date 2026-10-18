@@ -1,0 +1,9 @@
+{
+  "rollout_exposure": "passed",
+  "shared_cost_accounting": "passed",
+  "zero_exposure": "passed",
+  "license_cost_sensitivity": "passed",
+  "failure_boundaries": "passed",
+  "invalid_inputs": "passed",
+  "parity_fixtures": 8
+}

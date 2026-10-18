@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="architecture-map" viewBox="0 0 1080 840" role="group" aria-labelledby="architecture-title architecture-desc">
+<title id="architecture-title">PRI architecture: CI/CD, evidence, gate, approval and conditional business impact</title>
+<desc id="architecture-desc">Dashed arrows identify proposed CI/CD connections. Solid arrows identify relationships executed inside the simulation. Regression or insufficient evidence holds the candidate. Eligible evidence proceeds to a fictional human review and artifact-bound approval. Paired workload outcomes and separate economic assumptions feed the business model. Fictional incident history is isolated and affects neither gate nor finances. No production CI/CD system is connected.</desc>
+<defs><marker id="arch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#62675e"/></marker></defs>
+<style>#architecture-map text{font-family:Arial,Helvetica,sans-serif;fill:#202720}#architecture-map .arch-node{cursor:pointer}#architecture-map .arch-node:focus{outline:none}#architecture-map .arch-node:focus rect,#architecture-map .arch-node[aria-pressed="true"] rect{stroke:#985337;stroke-width:3}#architecture-map .arch-title{font-size:16px}#architecture-map .arch-status{font-size:8px;letter-spacing:.7px}#architecture-map .arch-body{font-size:10px}#architecture-map .arch-edge{stroke:#62675e;stroke-width:1.5;fill:none;marker-end:url(#arch-arrow)}#architecture-map .arch-label{font-size:9px;fill:#62675e}</style>
+<rect width="1080" height="840" fill="#f5f3ed"/>
+<path class="arch-edge" data-arch-edge="cicd-harness" d="M330 100 H390" stroke-dasharray="5 5"/><text class="arch-label" x="345" y="87">Trigger</text>
+<path class="arch-edge" data-arch-edge="harness-evidence" d="M690 100 H750"/><text class="arch-label" x="704" y="87">Capture</text>
+<path class="arch-edge" data-arch-edge="evidence-gate" d="M900 160 V200 H540 V250"/><text class="arch-label" x="620" y="190">Assess evidence</text>
+<path class="arch-edge" data-arch-edge="gate-hold" d="M390 300 H330"/><text class="arch-label" x="344" y="286">HOLD</text>
+<path class="arch-edge" data-arch-edge="gate-review" d="M690 300 H750"/><text class="arch-label" x="704" y="286">Eligible</text>
+<path class="arch-edge" data-arch-edge="hold-cicd" d="M180 250 V160" stroke-dasharray="5 5"/><text class="arch-label" x="37" y="207">Engineer correction / rerun</text>
+<path class="arch-edge" data-arch-edge="review-runtime" d="M900 360 V402 H540 V450"/><text class="arch-label" x="630" y="390">Artifact + expiry checks</text>
+<path class="arch-edge" data-arch-edge="runtime-outcomes" d="M690 505 H750"/><text class="arch-label" x="701" y="492">Measure</text>
+<path class="arch-edge" data-arch-edge="outcomes-economics" d="M900 560 V605 H540 V660"/><text class="arch-label" x="655" y="595">Paired operational differences</text>
+<path class="arch-edge" data-arch-edge="assumptions-economics" d="M330 715 H390"/><text class="arch-label" x="343" y="702">Inputs</text>
+<path class="arch-edge" data-arch-edge="economics-impact" d="M690 715 H750"/><text class="arch-label" x="702" y="702">Report</text>
+<g class="arch-node" data-arch-node="cicd" tabindex="0" role="button" aria-pressed="false" aria-label="CI/CD integration. PROPOSED INTEGRATION. Show details."><title>CI/CD integration: PROPOSED INTEGRATION</title><rect x="30" y="50" width="300" height="110" rx="2" fill="#efeee8" stroke="#aeb6a4" stroke-dasharray="5 4"/><text class="arch-status" x="44" y="72">PROPOSED INTEGRATION</text><text class="arch-title" x="44" y="98">CI/CD integration</text>
+<text class="arch-body" x="44" y="122">Commit / build / candidate artifact</text>
+<text class="arch-body" x="44" y="139">Trigger test and promotion checks</text>
+</g>
+<g class="arch-node" data-arch-node="harness" tabindex="0" role="button" aria-pressed="false" aria-label="Comparable test harness. EXECUTED IN SIMULATION. Show details."><title>Comparable test harness: EXECUTED IN SIMULATION</title><rect x="390" y="50" width="300" height="110" rx="2" fill="#e4e8dd" stroke="#aeb6a4"/><text class="arch-status" x="404" y="72">EXECUTED IN SIMULATION</text><text class="arch-title" x="404" y="98">Comparable test harness</text>
+<text class="arch-body" x="404" y="122">Baseline, candidate, revalidation</text>
+<text class="arch-body" x="404" y="139">Shared work marks and saved seeds</text>
+</g>
+<g class="arch-node" data-arch-node="evidence" tabindex="0" role="button" aria-pressed="false" aria-label="Evidence artifacts. EXECUTED IN SIMULATION. Show details."><title>Evidence artifacts: EXECUTED IN SIMULATION</title><rect x="750" y="50" width="300" height="110" rx="2" fill="#e4e8dd" stroke="#aeb6a4"/><text class="arch-status" x="764" y="72">EXECUTED IN SIMULATION</text><text class="arch-title" x="764" y="98">Evidence artifacts</text>
+<text class="arch-body" x="764" y="122">Metrics, configuration and seed</text>
+<text class="arch-body" x="764" y="139">Saved JSON / CSV; persistent store proposed</text>
+</g>
+<g class="arch-node" data-arch-node="hold" tabindex="0" role="button" aria-pressed="false" aria-label="Hold or investigate. EXECUTED IN SIMULATION. Show details."><title>Hold or investigate: EXECUTED IN SIMULATION</title><rect x="30" y="250" width="300" height="110" rx="2" fill="#efdfd2" stroke="#aeb6a4"/><text class="arch-status" x="44" y="272">EXECUTED IN SIMULATION</text><text class="arch-title" x="44" y="298">Hold or investigate</text>
+<text class="arch-body" x="44" y="322">Regression or insufficient evidence</text>
+<text class="arch-body" x="44" y="339">Candidate is not promoted</text>
+</g>
+<g class="arch-node" data-arch-node="gate" tabindex="0" role="button" aria-pressed="false" aria-label="Policy and evidence gate. EXECUTED IN SIMULATION. Show details."><title>Policy and evidence gate: EXECUTED IN SIMULATION</title><rect x="390" y="250" width="300" height="110" rx="2" fill="#e4e8dd" stroke="#aeb6a4"/><text class="arch-status" x="404" y="272">EXECUTED IN SIMULATION</text><text class="arch-title" x="404" y="298">Policy and evidence gate</text>
+<text class="arch-body" x="404" y="322">Coverage, environment, p95, failures</text>
+<text class="arch-body" x="404" y="339">GPU case: work, deadline, memory assumption</text>
+</g>
+<g class="arch-node" data-arch-node="review" tabindex="0" role="button" aria-pressed="false" aria-label="Human review + approval. SIMULATED REVIEW. Show details."><title>Human review + approval: SIMULATED REVIEW</title><rect x="750" y="250" width="300" height="110" rx="2" fill="#e4e8dd" stroke="#aeb6a4"/><text class="arch-status" x="764" y="272">SIMULATED REVIEW</text><text class="arch-title" x="764" y="298">Human review + approval</text>
+<text class="arch-body" x="764" y="322">Eligible is not production approval</text>
+<text class="arch-body" x="764" y="339">Fictional owner; digest + expiry binding</text>
+</g>
+<g class="arch-node" data-arch-node="history" tabindex="0" role="button" aria-pressed="false" aria-label="Incident-history context. ILLUSTRATIVE CONTEXT. Show details."><title>Incident-history context: ILLUSTRATIVE CONTEXT</title><rect x="30" y="450" width="300" height="110" rx="2" fill="#efeee8" stroke="#aeb6a4"/><text class="arch-status" x="44" y="472">ILLUSTRATIVE CONTEXT</text><text class="arch-title" x="44" y="498">Incident-history context</text>
+<text class="arch-body" x="44" y="522">Filter and deduplicate teaching records</text>
+<text class="arch-body" x="44" y="539">Not an input to gate or financial results</text>
+</g>
+<g class="arch-node" data-arch-node="runtime" tabindex="0" role="button" aria-pressed="false" aria-label="Paired workload execution. EXECUTED IN SIMULATION. Show details."><title>Paired workload execution: EXECUTED IN SIMULATION</title><rect x="390" y="450" width="300" height="110" rx="2" fill="#e4e8dd" stroke="#aeb6a4"/><text class="arch-status" x="404" y="472">EXECUTED IN SIMULATION</text><text class="arch-title" x="404" y="498">Paired workload execution</text>
+<text class="arch-body" x="404" y="522">Existing process vs PRI-authorized path</text>
+<text class="arch-body" x="404" y="539">Monitor / rollback; matched input workload</text>
+</g>
+<g class="arch-node" data-arch-node="outcomes" tabindex="0" role="button" aria-pressed="false" aria-label="Outcome and resource evidence. EXECUTED IN SIMULATION. Show details."><title>Outcome and resource evidence: EXECUTED IN SIMULATION</title><rect x="750" y="450" width="300" height="110" rx="2" fill="#e4e8dd" stroke="#aeb6a4"/><text class="arch-status" x="764" y="472">EXECUTED IN SIMULATION</text><text class="arch-title" x="764" y="498">Outcome and resource evidence</text>
+<text class="arch-body" x="764" y="522">Failures, retries, latency, CPU / GPU work</text>
+<text class="arch-body" x="764" y="539">Allocated time differs from busy time</text>
+</g>
+<g class="arch-node" data-arch-node="assumptions" tabindex="0" role="button" aria-pressed="false" aria-label="Business and cost assumptions. ECONOMIC ASSUMPTIONS. Show details."><title>Business and cost assumptions: ECONOMIC ASSUMPTIONS</title><rect x="30" y="660" width="300" height="110" rx="2" fill="#efeee8" stroke="#aeb6a4"/><text class="arch-status" x="44" y="682">ECONOMIC ASSUMPTIONS</text><text class="arch-title" x="44" y="708">Business and cost assumptions</text>
+<text class="arch-body" x="44" y="732">Exposure, recovery, contribution, labor</text>
+<text class="arch-body" x="44" y="749">Pricing and setup / operating budgets</text>
+</g>
+<g class="arch-node" data-arch-node="economics" tabindex="0" role="button" aria-pressed="false" aria-label="Attribution + economic model. CONDITIONAL CALCULATION. Show details."><title>Attribution + economic model: CONDITIONAL CALCULATION</title><rect x="390" y="660" width="300" height="110" rx="2" fill="#ece8dc" stroke="#aeb6a4"/><text class="arch-status" x="404" y="682">CONDITIONAL CALCULATION</text><text class="arch-title" x="404" y="708">Attribution + economic model</text>
+<text class="arch-body" x="404" y="732">Compare outcomes; avoid double counting</text>
+<text class="arch-body" x="404" y="749">Charge testing, review and shared costs</text>
+</g>
+<g class="arch-node" data-arch-node="impact" tabindex="0" role="button" aria-pressed="false" aria-label="Business-impact report. CONDITIONAL FINANCIAL MODEL. Show details."><title>Business-impact report: CONDITIONAL FINANCIAL MODEL</title><rect x="750" y="660" width="300" height="110" rx="2" fill="#ece8dc" stroke="#aeb6a4"/><text class="arch-status" x="764" y="682">CONDITIONAL FINANCIAL MODEL</text><text class="arch-title" x="764" y="708">Business-impact report</text>
+<text class="arch-body" x="764" y="732">Gross value → costs → net value</text>
+<text class="arch-body" x="764" y="749">Capacity and cash effects remain separate</text>
+</g>
+<text class="arch-label" x="30" y="810">Dashed = proposed integration. Solid = relationship represented in the simulation. No real CI/CD, GPU inference or customer savings are demonstrated.</text></svg>

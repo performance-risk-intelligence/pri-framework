@@ -1,0 +1,10 @@
+{
+  "conservation": "passed",
+  "time_budgets": "passed",
+  "timeout_work_charged": "passed",
+  "coverage_and_environment_holds": "passed",
+  "artifact_and_expiry_binding": "passed",
+  "held_assessment_not_approved": "passed",
+  "identical_seed_reproduction": "passed",
+  "unrepresentative_test_can_miss": "passed"
+}

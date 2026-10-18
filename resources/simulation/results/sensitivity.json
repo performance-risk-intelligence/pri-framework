@@ -1,0 +1,250 @@
+[
+  {
+    "case": "Fast incident rollback",
+    "config_changes": {
+      "rollback_delay_s": 0
+    },
+    "replications": 4,
+    "failed_journeys_avoided": {
+      "mean": 33152.5,
+      "min": 32868,
+      "max": 33436,
+      "mean_ci95": [
+        32881.0,
+        33424.0
+      ]
+    },
+    "production_cpu_s_avoided": {
+      "mean": 989.8348814922858,
+      "min": 971.7296151007258,
+      "max": 1004.172698420366,
+      "mean_ci95": [
+        977.922110260854,
+        1000.3361470808022
+      ]
+    },
+    "net_cpu_s_including_preflight": {
+      "mean": -222.63224136376073,
+      "min": -231.57624822001185,
+      "max": -216.47118436276241,
+      "mean_ci95": [
+        -228.95412421590214,
+        -217.70183343924572
+      ]
+    },
+    "faulty_gate_states": [
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION"
+    ],
+    "bad_release_promoted": false
+  },
+  {
+    "case": "Fast rollback and retry budget",
+    "config_changes": {
+      "rollback_delay_s": 0,
+      "retry_budget_fraction": 0.1
+    },
+    "replications": 4,
+    "failed_journeys_avoided": {
+      "mean": 11378.5,
+      "min": 8261,
+      "max": 12504,
+      "mean_ci95": [
+        9307.75,
+        12476.0
+      ]
+    },
+    "production_cpu_s_avoided": {
+      "mean": 347.68691822854385,
+      "min": 258.5230942440312,
+      "max": 384.70566629090354,
+      "mean_ci95": [
+        288.6845936063271,
+        381.93737899205917
+      ]
+    },
+    "net_cpu_s_including_preflight": {
+      "mean": -857.634611380412,
+      "min": -952.3014268829099,
+      "max": -812.7344277853929,
+      "mean_ci95": [
+        -922.2756782279398,
+        -817.8768604866236
+      ]
+    },
+    "faulty_gate_states": [
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION"
+    ],
+    "bad_release_promoted": false
+  },
+  {
+    "case": "Lower demand",
+    "config_changes": {
+      "base_rps": 20,
+      "peak_rps": 35
+    },
+    "replications": 4,
+    "failed_journeys_avoided": {
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "mean_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "production_cpu_s_avoided": {
+      "mean": 1419.5789298941984,
+      "min": 1413.6183492193572,
+      "max": 1428.362783643569,
+      "mean_ci95": [
+        1414.882845311328,
+        1425.3089230835014
+      ]
+    },
+    "net_cpu_s_including_preflight": {
+      "mean": 207.11180703815182,
+      "min": 195.7249728094232,
+      "max": 227.9465419398107,
+      "mean_ci95": [
+        197.56931286197488,
+        221.3782515507939
+      ]
+    },
+    "faulty_gate_states": [
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION"
+    ],
+    "bad_release_promoted": false
+  },
+  {
+    "case": "Slow incident rollback",
+    "config_changes": {
+      "rollback_delay_s": 600
+    },
+    "replications": 4,
+    "failed_journeys_avoided": {
+      "mean": 38261.75,
+      "min": 37984,
+      "max": 38514,
+      "mean_ci95": [
+        38077.0,
+        38435.0
+      ]
+    },
+    "production_cpu_s_avoided": {
+      "mean": 1542.3144378690215,
+      "min": 1524.8898785348883,
+      "max": 1563.3744011861318,
+      "mean_ci95": [
+        1526.7551997231426,
+        1557.8736760149004
+      ]
+    },
+    "net_cpu_s_including_preflight": {
+      "mean": 329.84731501297495,
+      "min": 306.37601360806343,
+      "max": 340.4197214479086,
+      "mean_ci95": [
+        314.31049784659575,
+        339.26683600505066
+      ]
+    },
+    "faulty_gate_states": [
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION",
+      "HOLD_REGRESSION"
+    ],
+    "bad_release_promoted": false
+  },
+  {
+    "case": "Unrepresentative preflight",
+    "config_changes": {
+      "preflight_bad_multiplier": 1
+    },
+    "replications": 4,
+    "failed_journeys_avoided": {
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "mean_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "production_cpu_s_avoided": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "mean_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "net_cpu_s_including_preflight": {
+      "mean": -1077.5192347671752,
+      "min": -1096.8218957927613,
+      "max": -1041.5096433372366,
+      "mean_ci95": [
+        -1093.9565772720534,
+        -1052.7284270601208
+      ]
+    },
+    "faulty_gate_states": [
+      "ELIGIBLE_FOR_REVIEW",
+      "ELIGIBLE_FOR_REVIEW",
+      "ELIGIBLE_FOR_REVIEW",
+      "ELIGIBLE_FOR_REVIEW"
+    ],
+    "bad_release_promoted": true
+  },
+  {
+    "case": "Missing preflight records",
+    "config_changes": {
+      "preflight_coverage": 0.7
+    },
+    "replications": 4,
+    "failed_journeys_avoided": {
+      "mean": 33539.5,
+      "min": 33288,
+      "max": 33784,
+      "mean_ci95": [
+        33329.5,
+        33749.5
+      ]
+    },
+    "production_cpu_s_avoided": {
+      "mean": 990.2448214829794,
+      "min": 972.2257412682948,
+      "max": 1004.3295315978803,
+      "mean_ci95": [
+        978.2353846979781,
+        1000.2969232924543
+      ]
+    },
+    "net_cpu_s_including_preflight": {
+      "mean": -222.22230137306713,
+      "min": -230.35416684811048,
+      "max": -215.97505819519347,
+      "mean_ci95": [
+        -227.99835489259755,
+        -217.38855900212155
+      ]
+    },
+    "faulty_gate_states": [
+      "HOLD_EVIDENCE",
+      "HOLD_EVIDENCE",
+      "HOLD_EVIDENCE",
+      "HOLD_EVIDENCE"
+    ],
+    "bad_release_promoted": false
+  }
+]
