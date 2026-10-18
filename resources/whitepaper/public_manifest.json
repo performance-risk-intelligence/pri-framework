@@ -1,0 +1,25 @@
+{
+  "edition": "1.2 public edition",
+  "date": "2026-10-18",
+  "changes": "Detailed technical system design, capacity and failure semantics, deployment safeguards, language and endeavor consistency review. Synthetic study unchanged.",
+  "publication_status": "Prepared public release; remote deployment verified separately.",
+  "current_edition_files": {
+    "index.html": "39b74b3ce354b83f3bbbb877b391d56a09d70df24ab5c23b38ef01dc5740555f",
+    "PRI_White_Paper_v1.2.md": "024480ef56f1bc9b82e56e52c18d6d16e3ff1ae34b04cba0705a5e8c40cac93f",
+    "PRI_White_Paper_v1.2.docx": "2f25caeb9635f6da341eb5a843b413e3fae63f92a0fa81fd7134dca186212305",
+    "PRI_White_Paper_v1.2.pdf": "241b217a8917b822fbf967fdf6c8d2a587109f6305195f50415e2c4b9afbda67",
+    "PRI_Synthetic_Study_v1.0.zip": "e645e858141c5ce766e3a1aa5b0d82dbb48e5502d866fc9beca4aa87b4fccaf3",
+    "assets/architecture.png": "9a727f98fe31efbd4336cda65ef1a70244111bf48f65a2d8c6676dc27698c035",
+    "assets/lifecycle.png": "b4e415135b45fd4efdabfea9f1103bc51176eb58f7f8c8d45be1070bad173ba6",
+    "assets/roadmap.png": "4cc8383d79a8cdca5d3631436972db7d1d3526ac67944c9c430943a4b45f937a",
+    "assets/synthetic_latency.png": "1b3fa2d642b7460f1ff803fda7185382b1e0152eb8664840a5869f42630b4cd2",
+    "assets/synthetic_outcomes.png": "7fc85fbe07f61cf0767423c1b581cd196070f88ca59551ab9d186ae1250a59ed",
+    "assets/system_deployment.png": "7de73e30b95b7399cfbfed54d62b6881361853eabd38a5cb253c456a40324c5d",
+    "simulation/README.md": "3e99addda06eb333a41b339b73eb59c8ce491a1913d8e883c75070583da10c21",
+    "simulation/pri_synthetic_study.py": "cbe15bc51d8094bff30c797760a7354ccb170d195e6c7812c375cb02215e72d7",
+    "simulation/results/batch_summary.csv": "92670365e68dd524903ade0b3ef917fb6856930e76e79a13ba3595d9027cb617",
+    "simulation/results/checks.json": "d523b3832fc6eec3e03aead3f2e6d914ca1232033627bbcc41ae6291a7c20112",
+    "simulation/results/sha256.json": "d7f92ce59ab7487acc254a2a034331a1ac89bdfcf1621f3ce2b19ec29d3b5986",
+    "simulation/results/summary.json": "0c4c54ec7c3bff62ef73f4fa1d23e5fb2f831a5b1b83c40e259301da27eb5c6a"
+  }
+}

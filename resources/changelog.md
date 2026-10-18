@@ -1,5 +1,14 @@
 # PRI public hub changelog
 
+## v0.5.0 — October 18, 2026
+
+- Added a Version 1.2 public edition of the technical and business white paper in HTML, Word, PDF and Markdown.
+- Added founder background source descriptions and a detailed system design covering private deployment, evidence processing, approval authority, failure recovery, security, capacity and integration contracts.
+- Reviewed language and endeavor consistency; added scope-specific privacy, regulated-data, procurement and environmental-claim safeguards with primary sources.
+- Added a reproducible generated-data study with code, parameters, batch summaries and integrity checks. This is an analysis simulation, not an operational service benchmark or predictive validation.
+- Kept employer absolute metrics, private source documents, finances, prospective-party drafts and personal contact details outside the public package.
+
+
 ## v0.4.1 — October 17, 2026
 
 - Added Faruk Uslu's founder profile and user-supplied photograph.

@@ -1,0 +1,297 @@
+{
+  "study": "PRI WP 1.0 synthetic simulation, not observed service tests",
+  "seed": 20261017,
+  "batches": 20,
+  "attempts_per_batch": 500,
+  "bootstrap_resamples": 2000,
+  "bootstrap_estimand": "ratio of mean batch successful-attempt p95 and observed failure-rate difference",
+  "python": "3.12.14",
+  "policy": {
+    "min_coverage": 0.99,
+    "max_latency_delta_pct": 10,
+    "max_failure_delta_pp": 1
+  },
+  "scenarios": {
+    "baseline": {
+      "scale": 1.0,
+      "fail": 0.01,
+      "retry": 0.03,
+      "coverage": 1.0,
+      "env": "E1"
+    },
+    "neutral": {
+      "scale": 1.0,
+      "fail": 0.01,
+      "retry": 0.03,
+      "coverage": 1.0,
+      "env": "E1"
+    },
+    "latency_shift": {
+      "scale": 1.3,
+      "fail": 0.01,
+      "retry": 0.03,
+      "coverage": 1.0,
+      "env": "E1"
+    },
+    "failure_increase": {
+      "scale": 1.0,
+      "fail": 0.04,
+      "retry": 0.03,
+      "coverage": 1.0,
+      "env": "E1"
+    },
+    "retry_amplification": {
+      "scale": 1.0,
+      "fail": 0.02,
+      "retry": 0.3,
+      "coverage": 1.0,
+      "env": "E1"
+    },
+    "revised_candidate": {
+      "scale": 1.02,
+      "fail": 0.008,
+      "retry": 0.03,
+      "coverage": 1.0,
+      "env": "E1"
+    },
+    "telemetry_gap": {
+      "scale": 1.0,
+      "fail": 0.01,
+      "retry": 0.03,
+      "coverage": 0.7,
+      "env": "E1"
+    },
+    "environment_mismatch": {
+      "scale": 1.2,
+      "fail": 0.01,
+      "retry": 0.03,
+      "coverage": 1.0,
+      "env": "E2"
+    },
+    "near_boundary": {
+      "scale": 1.107,
+      "fail": 0.01,
+      "retry": 0.03,
+      "coverage": 1.0,
+      "env": "E1"
+    }
+  },
+  "results": [
+    {
+      "scenario": "baseline",
+      "expected": 10000,
+      "observed": 10000,
+      "coverage_pct": 100.0,
+      "completions": 9901,
+      "failures": 99,
+      "failure_pct": 0.99,
+      "p50_ms": 456.9974698366879,
+      "p95_ms": 761.1732641196511,
+      "mean_batch_p95_ms": 755.4203085840502,
+      "latency_delta_ci_pct": [
+        0.0,
+        0.0
+      ],
+      "failure_delta_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "cpu_ms_per_completion": 122.17774691043029,
+      "attempts_with_retry_pct": 3.08,
+      "within_1000ms_per_observed_pct": 98.46,
+      "decision": "ELIGIBLE_FOR_REVIEW"
+    },
+    {
+      "scenario": "neutral",
+      "expected": 10000,
+      "observed": 10000,
+      "coverage_pct": 100.0,
+      "completions": 9901,
+      "failures": 99,
+      "failure_pct": 0.99,
+      "p50_ms": 456.9974698366879,
+      "p95_ms": 761.1732641196511,
+      "mean_batch_p95_ms": 755.4203085840502,
+      "latency_delta_ci_pct": [
+        0.0,
+        0.0
+      ],
+      "failure_delta_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "cpu_ms_per_completion": 122.17774691043029,
+      "attempts_with_retry_pct": 3.08,
+      "within_1000ms_per_observed_pct": 98.46,
+      "decision": "ELIGIBLE_FOR_REVIEW"
+    },
+    {
+      "scenario": "latency_shift",
+      "expected": 10000,
+      "observed": 10000,
+      "coverage_pct": 100.0,
+      "completions": 9901,
+      "failures": 99,
+      "failure_pct": 0.99,
+      "p50_ms": 593.5558281014881,
+      "p95_ms": 977.2490878864852,
+      "mean_batch_p95_ms": 971.0852233834811,
+      "latency_delta_ci_pct": [
+        28.01130879407269,
+        29.044635025933847
+      ],
+      "failure_delta_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "cpu_ms_per_completion": 157.8711679434624,
+      "attempts_with_retry_pct": 3.08,
+      "within_1000ms_per_observed_pct": 94.83,
+      "decision": "HOLD_REGRESSION"
+    },
+    {
+      "scenario": "failure_increase",
+      "expected": 10000,
+      "observed": 10000,
+      "coverage_pct": 100.0,
+      "completions": 9629,
+      "failures": 371,
+      "failure_pct": 3.71,
+      "p50_ms": 456.9974698366879,
+      "p95_ms": 760.2038863505153,
+      "mean_batch_p95_ms": 755.1963677163227,
+      "latency_delta_ci_pct": [
+        -0.34503947184083533,
+        0.2607137539207008
+      ],
+      "failure_delta_ci_pp": [
+        2.49,
+        2.93
+      ],
+      "cpu_ms_per_completion": 126.75894403989722,
+      "attempts_with_retry_pct": 3.08,
+      "within_1000ms_per_observed_pct": 95.75,
+      "decision": "HOLD_REGRESSION"
+    },
+    {
+      "scenario": "retry_amplification",
+      "expected": 10000,
+      "observed": 10000,
+      "coverage_pct": 100.0,
+      "completions": 9805,
+      "failures": 195,
+      "failure_pct": 1.95,
+      "p50_ms": 522.4751473861081,
+      "p95_ms": 869.1129440915812,
+      "mean_batch_p95_ms": 870.1251402342034,
+      "latency_delta_ci_pct": [
+        13.82492948218354,
+        16.608456252318845
+      ],
+      "failure_delta_ci_pp": [
+        0.8100000000000002,
+        1.11
+      ],
+      "cpu_ms_per_completion": 147.68606549313313,
+      "attempts_with_retry_pct": 29.14,
+      "within_1000ms_per_observed_pct": 96.53,
+      "decision": "HOLD_REGRESSION"
+    },
+    {
+      "scenario": "revised_candidate",
+      "expected": 10000,
+      "observed": 10000,
+      "coverage_pct": 100.0,
+      "completions": 9920,
+      "failures": 80,
+      "failure_pct": 0.8,
+      "p50_ms": 465.9675859273089,
+      "p95_ms": 775.5357631207181,
+      "mean_batch_p95_ms": 769.4469696966014,
+      "latency_delta_ci_pct": [
+        1.7273755667250008,
+        2.0020666027925342
+      ],
+      "failure_delta_ci_pp": [
+        -0.25025000000000003,
+        -0.1299999999999999
+      ],
+      "cpu_ms_per_completion": 124.24212798421105,
+      "attempts_with_retry_pct": 3.08,
+      "within_1000ms_per_observed_pct": 98.56,
+      "decision": "ELIGIBLE_FOR_REVIEW"
+    },
+    {
+      "scenario": "telemetry_gap",
+      "expected": 10000,
+      "observed": 6970,
+      "coverage_pct": 69.7,
+      "completions": 6904,
+      "failures": 66,
+      "failure_pct": 0.9469153515064562,
+      "p50_ms": 455.8845042047681,
+      "p95_ms": 759.6159925869948,
+      "mean_batch_p95_ms": 754.9908059007267,
+      "latency_delta_ci_pct": [
+        -1.0666984179699672,
+        1.0229400665709916
+      ],
+      "failure_delta_ci_pp": [
+        -0.1629127631079836,
+        0.07962296784101434
+      ],
+      "cpu_ms_per_completion": 121.78861380407771,
+      "attempts_with_retry_pct": 3.0989956958393114,
+      "within_1000ms_per_observed_pct": 98.5222381635581,
+      "decision": "HOLD_DATA"
+    },
+    {
+      "scenario": "environment_mismatch",
+      "expected": 10000,
+      "observed": 10000,
+      "coverage_pct": 100.0,
+      "completions": 9901,
+      "failures": 99,
+      "failure_pct": 0.99,
+      "p50_ms": 547.9832870087657,
+      "p95_ms": 904.3644044648804,
+      "mean_batch_p95_ms": 899.6408726293553,
+      "latency_delta_ci_pct": [
+        18.58040820623827,
+        19.51950946837149
+      ],
+      "failure_delta_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "cpu_ms_per_completion": 145.9733609324517,
+      "attempts_with_retry_pct": 3.08,
+      "within_1000ms_per_observed_pct": 96.76,
+      "decision": "HOLD_DATA"
+    },
+    {
+      "scenario": "near_boundary",
+      "expected": 10000,
+      "observed": 10000,
+      "coverage_pct": 100.0,
+      "completions": 9901,
+      "failures": 99,
+      "failure_pct": 0.99,
+      "p50_ms": 505.5892914942374,
+      "p95_ms": 838.0897867646045,
+      "mean_batch_p95_ms": 831.4718243500274,
+      "latency_delta_ci_pct": [
+        9.717647275823566,
+        10.378059222342321
+      ],
+      "failure_delta_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "cpu_ms_per_completion": 134.90840041221173,
+      "attempts_with_retry_pct": 3.08,
+      "within_1000ms_per_observed_pct": 97.62,
+      "decision": "INVESTIGATE"
+    }
+  ]
+}

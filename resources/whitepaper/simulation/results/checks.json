@@ -1,0 +1,14 @@
+{
+  "invariants": "passed",
+  "decisions": {
+    "baseline": "ELIGIBLE_FOR_REVIEW",
+    "neutral": "ELIGIBLE_FOR_REVIEW",
+    "latency_shift": "HOLD_REGRESSION",
+    "failure_increase": "HOLD_REGRESSION",
+    "retry_amplification": "HOLD_REGRESSION",
+    "revised_candidate": "ELIGIBLE_FOR_REVIEW",
+    "telemetry_gap": "HOLD_DATA",
+    "environment_mismatch": "HOLD_DATA",
+    "near_boundary": "INVESTIGATE"
+  }
+}
