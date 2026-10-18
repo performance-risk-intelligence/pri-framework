@@ -6,22 +6,20 @@
   <meta name="description" content="Explore PRI performance measurement, incident learning, release-risk assessment, preventive controls, and outcomes using synthetic data only.">
   <title>PRI Sandbox | Interactive synthetic demonstration</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css?v=0.4.1">
   <link rel="stylesheet" href="assets/pri-sandbox.css">
   <script src="assets/pri-sandbox.js" defer></script>
 </head>
-<body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header">
-  <a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">P<span>.</span></span><span><strong>PRI</strong><small>Performance Risk Intelligence</small></span></a>
-  <nav aria-label="Site"><a href="index.html">Home</a><a href="worked-example.html">Worked example</a><a href="assessment.html">Assessment</a><a href="resources/pri-sandbox-guide.md" download>Method guide</a></nav>
-</header>
+<body class="pri-sandbox">
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>PRI<span class="brand-caption">Performance Risk Intelligence</span></span></a><button type="button" class="menu-button" aria-expanded="false" aria-controls="sandbox-navigation">Menu <span aria-hidden="true">+</span></button><nav id="sandbox-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="worked-example.html">Worked example</a><a href="assessment.html">Assessment</a><a href="resources/pri-sandbox-guide.md">Method guide</a></nav></header>
 <main id="main">
-  <section class="hero">
+  <section class="sandbox-hero">
     <div class="hero-text">
       <p class="eyebrow">INTERACTIVE METHOD DEMONSTRATION / SYNTHETIC DATA</p>
       <h1>Follow a release from <em>signal</em> to prevention.</h1>
       <p>Explore how PRI could connect a performance benchmark, software incident history, a transparent risk assessment, preventive release controls, and review outcomes. Every value and record in this sandbox is synthetic.</p>
-      <div class="hero-actions"><a class="button primary" href="#workbench">Start exploring <span aria-hidden="true">↘</span></a><button class="button plain" id="reset-demo" type="button">Reset all examples</button></div>
+      <div class="hero-actions"><a class="button button-dark" href="#workbench">Start exploring <span aria-hidden="true">↘</span></a><button class="button plain" id="reset-demo" type="button">Reset all examples</button></div>
     </div>
     <aside class="hero-side" aria-label="Demonstration boundaries">
       <p class="eyebrow">WHAT THIS IS</p>
@@ -111,7 +109,7 @@
           <label>Reviewer name or role<input id="decision-owner" maxlength="60" placeholder="Example: Engineering lead" required></label>
           <label>Review outcome<select id="decision-choice"><option value="hold">Hold for further validation</option><option value="mitigate">Mitigation required</option><option value="exception">Document a proposed exception</option></select></label>
           <label>Evidence and rationale<textarea id="decision-rationale" rows="3" minlength="10" maxlength="500" placeholder="Record evidence, limitations, and next action" required></textarea></label>
-          <button class="button primary full" type="submit">Record example decision</button>
+          <button class="button button-dark full" type="submit">Record example decision</button>
         </form>
         <div class="audit-list" id="audit-list" aria-live="polite"><p class="muted">No review decisions recorded yet.</p></div>
       </section>
@@ -130,10 +128,44 @@
       <div><small>Incidents with prevention links</small><strong id="out-prevention">-</strong><span>Documented, not verified effective</span></div>
       <div><small>Documented review decisions</small><strong id="out-decisions">0</strong><span>Session only</span></div>
     </div>
-    <div class="outcome-footer"><p>To establish real effectiveness, a future pilot would need comparable workload samples, observation periods, control adoption evidence, and a check for confounding changes.</p><button id="export-demo" type="button" class="button light">Export synthetic evidence JSON <span aria-hidden="true">↓</span></button></div>
+    <div class="outcome-footer"><p>To establish real effectiveness, a future pilot would need comparable workload samples, observation periods, control adoption evidence, and a check for confounding changes.</p><button id="export-demo" type="button" class="button plain">Export synthetic evidence JSON <span aria-hidden="true">↓</span></button></div>
     <p id="app-status" class="sr-only" role="status"></p>
   </section>
 
+  
+  <section class="impact-section" id="impact" aria-labelledby="impact-title">
+    <div class="impact-heading"><div><p class="eyebrow">06 / BUSINESS IMPACT MODEL</p><h2 id="impact-title">What is the cost of <em>letting the regression through?</em></h2></div><p>Estimate the potential monthly value of preventing avoidable retries and repeat engineering remediation. This is a hypothetical decision-support model, not a PRI customer result, savings guarantee, or measured impact.</p></div>
+    <div class="impact-intro"><strong>Follow the economic chain</strong><span>Regression → More retries and recurring incidents → Wasted compute + remediation effort → Potential prevention value</span></div>
+    <div class="impact-layout">
+      <div class="impact-controls">
+        <h3>Set your scenario assumptions</h3>
+        <p>Values below are invented. Edit them to see what different workloads and improvements would mean. The current candidate retry rate comes from Step 1.</p>
+        <div class="form-grid two">
+          <label>Monthly workflow attempts<input id="impact-volume" type="number" min="0" max="1000000000" step="10000" value="500000"></label>
+          <label>Incremental compute cost per retry ($)<input id="impact-retry-cost" type="number" min="0" max="1000000" step="0.01" value="0.08"></label>
+          <label>Proposed retry rate after controls (%)<input id="impact-target-retry" type="number" min="0" max="100" step="0.1" value="1.2"></label>
+          <label>Fully loaded engineering cost per hour ($)<input id="impact-hourly" type="number" min="0" max="100000" step="5" value="125"></label>
+          <label>Current recurring remediation hours per month<input id="impact-hours-before" type="number" min="0" max="100000" step="5" value="80"></label>
+          <label>Modeled hours after prevention per month<input id="impact-hours-after" type="number" min="0" max="100000" step="5" value="45"></label>
+        </div>
+        <div class="impact-actions"><button type="button" id="impact-apply" class="button button-dark">Explore proposed prevention scenario <span aria-hidden="true">↗</span></button><button type="button" id="impact-reset" class="button plain">Reset assumptions</button></div>
+        <p class="small-note">Avoided retries are not assumed to reduce paid cloud bills proportionally when pricing is fixed or committed. Engineering hours represent potential capacity value, not necessarily cash savings.</p>
+      </div>
+      <div class="impact-output" aria-live="polite" aria-atomic="true">
+        <p class="eyebrow">HYPOTHETICAL MONTHLY OPPORTUNITY</p>
+        <div class="impact-total"><span id="impact-total">$0</span><small>/ month</small></div>
+        <p class="impact-descriptor">Potential combined value under your assumptions, not verified savings.</p>
+        <div class="impact-metrics">
+          <div><span>Fewer retries per month</span><strong id="impact-retries">0</strong></div>
+          <div><span>Avoidable incremental compute cost</span><strong id="impact-compute">$0</strong></div>
+          <div><span>Engineering capacity value</span><strong id="impact-engineering">$0</strong></div>
+          <div><span>Annualized opportunity, if sustained</span><strong id="impact-annual">$0</strong></div>
+        </div>
+        <p class="impact-equation" id="impact-calculation">Monthly workflows × positive retry-rate difference × marginal cost per retry + positive difference in remediation hours × hourly cost.</p>
+      </div>
+    </div>
+    <div class="impact-foot"><strong>What PRI would actually need to prove</strong><p>A real pilot must establish a comparable before-and-after baseline, link implemented controls to observed changes, account for workload and pricing differences, and distinguish realized cash savings from redeployable engineering capacity. The modeled effect is <strong>not</strong> automatically attributable to PRI.</p></div>
+  </section>
   <section class="method-note">
     <div><p class="eyebrow">HOW TO INTERPRET THE SANDBOX</p><h2>A documented process is not a validated predictor.</h2></div>
     <p>The initial PRI workflow is measurement → incident learning → transparent release-risk criteria → documented prevention controls → outcome review. Predictive scoring would require a separately developed labeled dataset and validation. No customer information, private repositories, proprietary employer data, or external service integrations are used here. <a href="resources/pri-sandbox-guide.md">Read the model rules and limitations.</a></p>
